@@ -30,13 +30,13 @@
         <!-- Sidebar -->
         {{-- @if ($role == 'admin')
             @include('sidebar.sidebar_admin')
-        @elseif ($level == 'ketua')
+        @elseif ($role == 'ketua')
             @include('sidebar.sidebarKetua')
-        @elseif ($level == 'divisiKeuangan')
+        @elseif ($role == 'divisiKeuangan')
             @include('sidebar.sidebar_divisiKeuangan')
-        @elseif ($level == 'divisiUpja')
+        @elseif ($role == 'divisiUpja')
             @include('sidebar.sidebar_divisiUpja')
-        @elseif ($level == 'anggota')
+        @elseif ($role == 'anggota')
             @include('sidebar.sidebar_anggota')
 
         @endif --}}
@@ -107,6 +107,10 @@
     <!-- Page level custom scripts -->
     <script src="/Admin_Template/js/demo/chart-area-demo.js"></script>
     <script src="/Admin_Template/js/demo/chart-pie-demo.js"></script>
+
+    {{-- Link Link Apapun untuk apa aja --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 </body>
 
