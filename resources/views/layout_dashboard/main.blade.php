@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>{{ $title }}</title>
 
     <!-- Custom fonts for this template-->
     <link href="/Admin_Template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -40,7 +40,7 @@
             @include('sidebar.sidebar_anggota')
 
         @endif --}}
-         @include('sidebar.sidebar_admin')
+         @include('sidebar_dashboard.sidebar_dashboard')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
