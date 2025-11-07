@@ -110,7 +110,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; <span id="year"></span> SI-KEPT</span>
                     </div>
                 </div>
             </footer>
@@ -165,6 +165,11 @@
     <!-- Page level custom scripts -->
     <script src="/Admin_Template/js/demo/chart-area-demo.js"></script>
     <script src="/Admin_Template/js/demo/chart-pie-demo.js"></script>
+
+    <script>
+    // Script untuk menampilkan tahun otomatis
+    document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
     {{-- Link Link Apapun untuk apa aja --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
