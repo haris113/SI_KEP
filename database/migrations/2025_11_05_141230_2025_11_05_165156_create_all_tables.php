@@ -149,7 +149,7 @@ return new class extends Migration
         $table->double('jumlah');
         $table->date('tanggal');
         $table->string('keterangan')->nullable();
-        $table->enum('status', ['Lunas', 'Belum Lunas'])->nullable();
+        $table->string('status');
         $table->timestamps();
 
         $table->foreign('id_anggota')->references('id_anggota')->on('anggota')->cascadeOnDelete();
