@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
-class AnggotaSeeder extends Seeder
+class anggota_seeder extends Seeder
 {
     public function run(): void
     {

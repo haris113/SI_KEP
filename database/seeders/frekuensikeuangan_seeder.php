@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class FrekuensiKeuanganSeeder extends Seeder
+class frekuensikeuangan_seeder extends Seeder
 {
     public function run(): void
     {

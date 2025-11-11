@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             penyusutan_seeder::class,
             pinjaman_seeder::class,
             laporanupja_seeder::class, 
-            penggunaan_alsintanSeeder::class,
+            penggunaanalsintan_seeder::class,
             saldo_seeder::class,
             perawatan_seeder::class,
         ]);
