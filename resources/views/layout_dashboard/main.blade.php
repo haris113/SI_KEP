@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,37 +18,35 @@
     <!-- Custom styles for this template-->
     <link href="/Admin_Template/css/sb-admin-2.min.css" rel="stylesheet">
 
-    {{-- Testing CSS Agar Sidebar Tidak Gerak --}}
-    
-
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body id="page-top">
-
-    <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
-        {{-- @if ($role == 'admin')
-            @include('sidebar.sidebar_admin')
-        @elseif ($role == 'ketua')
-            @include('sidebar.sidebarKetua')
-        @elseif ($role == 'divisiKeuangan')
-            @include('sidebar.sidebar_divisiKeuangan')
-        @elseif ($role == 'divisiUpja')
-            @include('sidebar.sidebar_divisiUpja')
-        @elseif ($role == 'anggota')
-            @include('sidebar.sidebar_anggota')
-        @endif --}}
-        @include('sidebar_dashboard.sidebar_dashboard')
-        <!-- End of Sidebar -->
+        @php
+            $role = Auth::user()->role->role ?? '';
+        @endphp
 
-        <!-- Content Wrapper -->
+        @if ($role === 'admin')
+            @include('sidebar_dashboard.sidebar_admin')
+        @elseif ($role === 'ketua')
+            @include('sidebar_dashboard.sidebar_ketua')
+        @elseif ($role === 'divisi keuangan')
+            @include('sidebar_dashboard.sidebar_keuangan')
+        @elseif ($role === 'divisi upja')
+            @include('sidebar_dashboard.sidebar_upja')
+        @elseif ($role === 'anggota')
+            @include('sidebar_dashboard.sidebar_anggota')
+        @endif
+        <!-- End Sidebar -->
+
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <!-- Sidebar Toggle -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
@@ -69,42 +66,44 @@
 
                 <!-- Navbar -->
                 <ul class="navbar-nav ml-auto">
-
-                    <!-- User Info -->
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Cevi Yaumul Hidayah</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                {{ Auth::user()->nama ?? 'User' }}
+                            </span>
                             <img class="img-profile rounded-circle" src="/Admin_Template/img/undraw_profile.svg">
                         </a>
+
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="#">
-                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Profile
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
                             </a>
                             <a class="dropdown-item" href="#">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Settings
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings
                             </a>
                             <a class="dropdown-item" href="#">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Activity Log
+                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
+
+                            <!-- ✅ Tombol Logout SweetAlert -->
+                            <a href="#" id="logoutBtn" class="dropdown-item">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
                             </a>
+
+                            <form id="logoutForm" action="{{ route('logout') }}" method="POST" style="display:none;">
+                                @csrf
+                            </form>
                         </div>
                     </li>
                 </ul>
             </nav>
-            <!-- End of Topbar -->
+            <!-- End Topbar -->
 
             <!-- Main Content -->
             @yield('content')
-            <!-- End of Main Content -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -114,66 +113,56 @@
                     </div>
                 </div>
             </footer>
-            <!-- End of Footer -->
-
         </div>
-        <!-- End of Content Wrapper -->
-
     </div>
-    <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
+    <!-- Scroll to Top Button -->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Logout?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Anda Yakin Ingin Logout?
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" type="button" data-dismiss="modal">Batal</button>
-                    <a class="btn btn-danger" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
+    <!-- JS -->
     <script src="/Admin_Template/vendor/jquery/jquery.min.js"></script>
     <script src="/Admin_Template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
     <script src="/Admin_Template/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
     <script src="/Admin_Template/js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
     <script src="/Admin_Template/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
     <script src="/Admin_Template/js/demo/chart-area-demo.js"></script>
     <script src="/Admin_Template/js/demo/chart-pie-demo.js"></script>
 
     <script>
-    // Script untuk menampilkan tahun otomatis
-    document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // ✅ Logout pakai SweetAlert
+        document.getElementById('logoutBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Yakin ingin logout?',
+                text: "Kamu akan keluar dari akun ini.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, logout!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('logoutForm').submit();
+                }
+            });
+        });
+
+        // ✅ Pesan Logout Berhasil (dari controller)
+        @if(session('success'))
+        Swal.fire({
+            icon: 'success',
+            title: '{{ session('success') }}',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        @endif
     </script>
 
-    {{-- Link Link Apapun untuk apa aja --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </body>
-
 </html>

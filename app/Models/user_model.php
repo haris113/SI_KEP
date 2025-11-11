@@ -2,20 +2,36 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class user_model extends Model
+class user_model extends Authenticatable
 {
-    use HasFactory;
+    use Notifiable;
 
-    protected $table ='user';
-    protected $primarykey ='id_user';
+    protected $table = 'user';
+    protected $primaryKey = 'id_user';
+    public $timestamps = true;
 
     protected $fillable = [
-        'username','password','nama','id_role','id_foto'
+        'username',
+        'password',
+        'nama',
+        'id_role',
+        'id_foto',
     ];
 
-    public $timestamps = false;
+    protected $hidden = [
+        'password',
+    ];
+
+    public function role()
+    {
+        return $this->belongsTo(role_model::class, 'id_role', 'id_role');
+    }
+
+    public function foto()
+    {
+        return $this->belongsTo(foto_model::class, 'id_foto', 'id_foto');
+    }
 }
