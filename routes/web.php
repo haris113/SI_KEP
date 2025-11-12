@@ -1,15 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin_controller;
-use App\Http\Controllers\keuangan_controller;
-use App\Http\Controllers\upja_controller;
-use App\Http\Controllers\login_controller;
+use App\Http\Controllers\Admin\admin_controller;
+use App\Http\Controllers\Admin\proses_admin_controller;
+use App\Http\Controllers\Beranda\beranda_controller;
+use App\Http\Controllers\Beranda\proses_beranda_controller;
 
-Route::get('/', [login_controller::class, 'index'])->name('login');
-Route::post('/login', [login_controller::class, 'proses_login'])->name('proses_login');
-Route::get('/logout', [login_controller::class, 'logout'])->name('logout');
-Route::post('/logout', [login_controller::class, 'logout'])->name('logout');
+Route::get('/', [beranda_controller::class, 'index'])->name('login');
+Route::post('/login', [proses_beranda_controller::class, 'proses_login'])->name('proses_login');
+Route::get('/logout', [proses_beranda_controller::class, 'logout'])->name('logout');
+Route::post('/logout', [proses_beranda_controller::class, 'logout'])->name('logout');
 
 // Hanya role tertentu yang bisa akses route di bawah ini
 Route::middleware(['verifikasi_role:admin'])->group(function () {

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Divisi_Upja;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class divisi_upja_controller extends Controller

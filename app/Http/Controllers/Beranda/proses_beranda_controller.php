@@ -1,22 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Beranda;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\user_model;
 
-class login_controller extends Controller
+class proses_beranda_controller extends Controller
 {
-    public function index()
-    {
-        return view('pages.login.login', [
-            'judul' => 'Login',
-            'title' => 'Halaman Login | SI-KEP',
-        ]);
-    }
-
     public function proses_login(Request $request)
     {
         $request->validate([
@@ -49,13 +42,13 @@ class login_controller extends Controller
         return back()->withErrors(['login' => 'Username atau password salah!']);
     }
 
-   public function logout(Request $request)
-{
-    Auth::logout();
+    public function logout(Request $request)
+    {
+        Auth::logout();
 
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
-    return redirect('/')->with('success', 'Logout berhasil!');
-}
+        return redirect('/')->with('success', 'Logout berhasil!');
+    }
 }
