@@ -60,7 +60,8 @@
                                         <div class="form-group">
                                             <input type="text" name="username"
                                                 class="form-control form-control-user"
-                                                placeholder="Masukkan Username" required>
+                                                placeholder="Masukkan Username"
+                                                value="{{ old('username') }}" required>
                                         </div>
 
                                         <div class="form-group">

@@ -12,35 +12,39 @@ class proses_beranda_controller extends Controller
 {
     public function proses_login(Request $request)
     {
-        $request->validate([
-            'username' => 'required',
-            'password' => 'required',
-        ]);
+    $request->validate([
+        'username' => 'required',
+        'password' => 'required',
+    ]);
 
-        $credentials = $request->only('username', 'password');
+    $credentials = $request->only('username', 'password');
 
-        if (Auth::attempt($credentials)) {
-            $user = Auth::user();
+    if (Auth::attempt($credentials)) {
+        $user = Auth::user();
 
-            // Arahkan berdasarkan role
-            switch ($user->role->role) {
-                case 'admin':
-                     return redirect()->route('admin.dashboard');
-                case 'ketua':
-                    return redirect()->route('ketua.dashboard');
-                case 'divisi keuangan':
-                    return redirect()->route('keuangan.dashboard');
-                case 'divisi upja':
-                    return redirect()->route('upja.dashboard');
-                case 'anggota':
-                    return redirect()->route('anggota.dashboard');
-                default:
-                    return redirect('/');
-            }
+        // Arahkan berdasarkan role
+        switch ($user->role->role) {
+            case 'admin':
+                return redirect()->route('admin.dashboard');
+            case 'ketua':
+                return redirect()->route('ketua.dashboard');
+            case 'divisi keuangan':
+                return redirect()->route('keuangan.dashboard');
+            case 'divisi upja':
+                return redirect()->route('upja.dashboard');
+            case 'anggota':
+                return redirect()->route('anggota.dashboard');
+            default:
+                return redirect('/');
         }
-
-        return back()->withErrors(['login' => 'Username atau password salah!']);
     }
+
+        // Tambahkan withInput() agar username tetap muncul setelah gagal login
+        return back()
+            ->withErrors(['login' => 'Username atau password salah!'])
+            ->withInput();
+    }
+
 
     public function logout(Request $request)
     {
