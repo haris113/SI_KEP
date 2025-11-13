@@ -7,13 +7,17 @@ use App\Http\Controllers\Admin\proses_admin_controller;
 use App\Http\Controllers\Beranda\beranda_controller;
 use App\Http\Controllers\Beranda\proses_beranda_controller;
 
+//Landing page
+Route::get('/', [beranda_controller::class, 'beranda'])->name('beranda');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [Controller::class, 'profile'])->name('profile');
     Route::post('/profile/update', [Controller::class, 'updateProfile'])->name('update.profile');
     Route::post('/profile/upload-foto', [Controller::class, 'uploadFoto'])->name('upload.foto');
 });
 
-Route::get('/', [beranda_controller::class, 'index'])->name('login');
+Route::get('/login', [beranda_controller::class, 'index'])->name('login');
 Route::post('/login', [proses_beranda_controller::class, 'proses_login'])->name('proses_login');
 Route::get('/logout', [proses_beranda_controller::class, 'logout'])->name('logout');
 Route::post('/logout', [proses_beranda_controller::class, 'logout'])->name('logout');

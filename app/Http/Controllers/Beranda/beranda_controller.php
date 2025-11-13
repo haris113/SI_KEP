@@ -14,4 +14,11 @@ class beranda_controller extends Controller
             'title' => 'Halaman Login | SI-KEP',
         ]);
     }
+
+    public function beranda()
+    {
+        return view('pages.landing_page.landing_page', [
+            'title' => 'Landing Page | SI-KEP',
+        ]);
+    }
 }
