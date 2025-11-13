@@ -2,9 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\admin_controller;
+use App\Http\Controllers\controller;
 use App\Http\Controllers\Admin\proses_admin_controller;
 use App\Http\Controllers\Beranda\beranda_controller;
 use App\Http\Controllers\Beranda\proses_beranda_controller;
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [Controller::class, 'profile'])->name('profile');
+    Route::post('/profile/update', [Controller::class, 'updateProfile'])->name('update.profile');
+    Route::post('/profile/upload-foto', [Controller::class, 'uploadFoto'])->name('upload.foto');
+});
 
 Route::get('/', [beranda_controller::class, 'index'])->name('login');
 Route::post('/login', [proses_beranda_controller::class, 'proses_login'])->name('proses_login');
