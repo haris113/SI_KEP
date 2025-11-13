@@ -32,26 +32,24 @@
                         <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Anggota</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
-                        <li class="nav-item">
-  <a class="nav-link login-btn" href="{{ url('/login') }}">Login</a>
-</li>
-
-<style>
-.login-btn {
-  background-color: #ffd000;
-  opacity: 30%;
-  color: white !important;
-  padding: 8px 16px;
-  border-radius: 6px;
-  text-decoration: seashell;
-  transition: 0.3s;
-  
-}
-
-.login-btn:hover {
-  background-color: #ffb700;
-}
-</style>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/login') }}">Login</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link login-btn" href="{{ url('/login') }}">Login</a></li>
+                        <style>
+                        .login-btn {
+                        background-color: #ffffff8d;
+                        /* opacity: 30%; */
+                        color: white ;
+                        padding: 8px 16px;
+                        border-radius: 6px;
+                        text-decoration: rgb(255, 106, 0);
+                        transition: 0.3s;
+                         }
+                        .login-btn:hover {
+                        text-decoration: rgb(255, 208, 0);
+                        font: bold;
+                        background-color: #ffffffef;
+                        }
+                        </style> --}}
 
 
                     </ul>
