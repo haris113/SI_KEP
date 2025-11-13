@@ -53,6 +53,6 @@ class proses_beranda_controller extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/')->with('success', 'Logout berhasil!');
+        return redirect('/login')->with('success', 'Logout berhasil!');
     }
 }

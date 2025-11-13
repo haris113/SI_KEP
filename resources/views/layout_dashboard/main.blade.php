@@ -88,7 +88,7 @@
                             <a class="dropdown-item" href="#">
                                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log
                             </a> --}}
-                            <div class="dropdown-divider"></div>
+                            {{-- <div class="dropdown-divider"></div> --}}
 
                             <!-- ✅ Tombol Logout SweetAlert -->
                             <a href="#" id="logoutBtn" class="dropdown-item">
@@ -133,37 +133,50 @@
     <script src="/Admin_Template/js/demo/chart-pie-demo.js"></script>
 
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-        // ✅ Logout pakai SweetAlert
-        document.getElementById('logoutBtn').addEventListener('click', function (e) {
-            e.preventDefault();
-            Swal.fire({
-                title: 'Yakin ingin logout?',
-                text: "Kamu akan keluar dari akun ini.",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Ya, logout!',
-                cancelButtonText: 'Batal'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    document.getElementById('logoutForm').submit();
-                }
-            });
-        });
-
-        // ✅ Pesan Logout Berhasil (dari controller)
-        @if(session('success'))
+    // ✅ Logout pakai SweetAlert
+    document.getElementById('logoutBtn').addEventListener('click', function (e) {
+        e.preventDefault();
         Swal.fire({
-            icon: 'success',
-            title: '{{ session('success') }}',
-            showConfirmButton: false,
-            timer: 1500
+            title: 'Yakin ingin logout?',
+            text: "Kamu akan keluar dari akun ini.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, logout!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('logoutForm').submit();
+            }
         });
-        @endif
-    </script>
+    });
+
+    // ✅ Pesan Logout / Aksi Berhasil (dari controller)
+    @if(session('success'))
+    Swal.fire({
+        icon: 'success',
+        title: '{{ session('success') }}',
+        showConfirmButton: false,
+        timer: 1500
+    });
+    @endif
+
+    // ✅ Pesan Error (dari middleware VerifikasiRole atau controller)
+    @if(session('error'))
+        Swal.fire({
+            icon: 'error',
+            title: 'Akses Ditolak!',
+            text: '{{ session('error') }}',
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'OK'
+        });
+    @endif
+
+</script>
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </body>

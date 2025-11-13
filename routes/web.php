@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\admin_controller;
 use App\Http\Controllers\controller;
+use App\Http\Controllers\Admin\admin_controller;
 use App\Http\Controllers\Admin\proses_admin_controller;
+use App\Http\Controllers\Ketua\ketua_controller;
+use App\Http\Controllers\Ketua\proses_ketua_controller;
 use App\Http\Controllers\Beranda\beranda_controller;
 use App\Http\Controllers\Beranda\proses_beranda_controller;
 
@@ -28,9 +30,7 @@ Route::middleware(['verifikasi_role:admin'])->group(function () {
 });
 
 Route::middleware(['verifikasi_role:ketua'])->group(function () {
-    Route::get('/ketua/dashboard', function () {
-        return "Selamat datang, Ketua!";
-    })->name('ketua.dashboard');
+     Route::get('/ketua/dashboard', [ketua_controller::class, 'index'])->name('ketua.dashboard');
 });
 
 Route::middleware(['verifikasi_role:divisi keuangan'])->group(function () {
