@@ -33,7 +33,7 @@ class user_seeder extends Seeder
             [
                 'username'   => 'Lady',
                 'password'   => Hash::make('123'),
-                'nama'       => 'cevi yaumul hidayah',
+                'nama'       => 'Admin Keuangan',
                 'id_role'    => 3,
                 'id_foto'    => 3,
                 'created_at' => Carbon::now(),
@@ -42,7 +42,7 @@ class user_seeder extends Seeder
             [
                 'username'   => 'Paradiba',
                 'password'   => Hash::make('123'),
-                'nama'       => 'alifa nur nabila paradiba',
+                'nama'       => 'Anggota 1',
                 'id_role'    => 4,
                 'id_foto'    => 2,
                 'created_at' => Carbon::now(),
