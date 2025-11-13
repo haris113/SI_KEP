@@ -131,6 +131,10 @@
     <script src="/Admin_Template/vendor/chart.js/Chart.min.js"></script>
     <script src="/Admin_Template/js/demo/chart-area-demo.js"></script>
     <script src="/Admin_Template/js/demo/chart-pie-demo.js"></script>
+    <script src="/Admin_Template/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/Admin_Template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+     <script src="/Admin_Template/js/demo/datatables-demo.js"></script>
+
 
     <script>
     document.getElementById("year").textContent = new Date().getFullYear();

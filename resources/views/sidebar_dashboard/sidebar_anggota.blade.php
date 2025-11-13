@@ -15,7 +15,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item {{ $page === 'Beranda' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('/admin/dashboard') }}">
+        <a class="nav-link" href="{{ url('/anggota/dashboard') }}">
             <i class="fa-solid fa-house"></i>
             <span>Beranda</span>
         </a>
@@ -23,7 +23,7 @@
 
     <!-- Nav Item - Anggota -->
     <li class="nav-item {{ $page === 'Anggota' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin/Anggota') }}">
+        <a class="nav-link" href="{{ url('/anggota/anggota') }}">
             <i class="fa-solid fa-users fa-fw"></i>
             <span>Anggota</span>
         </a>
