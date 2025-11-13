@@ -6,6 +6,12 @@ use App\Http\Controllers\Admin\admin_controller;
 use App\Http\Controllers\Admin\proses_admin_controller;
 use App\Http\Controllers\Ketua\ketua_controller;
 use App\Http\Controllers\Ketua\proses_ketua_controller;
+use App\Http\Controllers\Anggota\anggota_controller;
+use App\Http\Controllers\Anggota\proses_anggota_controller;
+use App\Http\Controllers\Divisi_Keuangan\divisi_keuangan_controller;
+use App\Http\Controllers\Divisi_Keuangan\proses_divisi_keuangan_controller;
+use App\Http\Controllers\Divisi_Upja\divisi_upja_controller;
+use App\Http\Controllers\Divisi_Upja\proses_divisi_upja_controller;
 use App\Http\Controllers\Beranda\beranda_controller;
 use App\Http\Controllers\Beranda\proses_beranda_controller;
 
@@ -34,19 +40,13 @@ Route::middleware(['verifikasi_role:ketua'])->group(function () {
 });
 
 Route::middleware(['verifikasi_role:divisi keuangan'])->group(function () {
-    Route::get('/keuangan/dashboard', function () {
-        return "Selamat datang, Divisi Keuangan!";
-    })->name('keuangan.dashboard');
+    Route::get('/keuangan/dashboard', [divisi_keuangan_controller::class, 'index'])->name('keuangan.dashboard');
 });
 
 Route::middleware(['verifikasi_role:divisi upja'])->group(function () {
-    Route::get('/upja/dashboard', function () {
-        return "Selamat datang, Divisi UPJA!";
-    })->name('upja.dashboard');
+    Route::get('/upja/dashboard', [divisi_upja_controller::class, 'index'])->name('upja.dashboard');
 });
 
 Route::middleware(['verifikasi_role:anggota'])->group(function () {
-    Route::get('/anggota/dashboard', function () {
-        return "Selamat datang, Anggota!";
-    })->name('anggota.dashboard');
+   Route::get('/anggota/dashboard', [anggota_controller::class, 'index'])->name('anggota.dashboard');
 });

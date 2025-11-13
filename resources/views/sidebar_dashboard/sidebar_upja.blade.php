@@ -21,51 +21,17 @@
         </a>
     </li>
 
-    <!-- Nav Item - Anggota -->
-    <li class="nav-item {{ $page === 'Anggota' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin/Anggota') }}">
-            <i class="fa-solid fa-users fa-fw"></i>
-            <span>Anggota</span>
-        </a>
-    </li>
-
-    <!-- Nav Item - Kegiatan -->
-    <li class="nav-item {{ $page === 'Kegiatan' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin/Kegiatan') }}">
-            <i class="fa-solid fa-chart-line fa-fw"></i>
-            <span>Kegiatan</span>
-        </a>
-    </li>
-
-    <!-- Nav Item - Kelembagaan -->
-    <li class="nav-item {{ $page === 'Kelembagaan' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin/Kelembagaan') }}">
-            <i class="fa-solid fa-building-columns fa-fw"></i>
-            <span>Kelembagaan</span>
-        </a>
-    </li>
-
-    <!-- Nav Item - Arsip Dokumen -->
-    <li class="nav-item {{ $page === 'Arsip' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin/Arsip') }}">
-            <i class="fa-solid fa-file-lines fa-fw"></i>
-            <span>Arsip Dokumen</span>
-        </a>
-    </li>
-
     <!-- Nav Item - Divisi Keuangan -->
     <li class="nav-item {{ in_array($page, ['Laporan Keuangan', 'Penyusutan', 'Pinjaman']) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKeuangan"
-            aria-expanded="{{ in_array($page, ['Laporan Keuangan', 'Penyusutan', 'Pinjaman']) ? 'true' : 'false' }}"
+            aria-expanded="{{ in_array($page, ['Penyusutan']) ? 'true' : 'false' }}"
             aria-controls="collapseKeuangan">
             <i class="fa-solid fa-wallet fa-fw"></i>
             <span>Divisi Keuangan</span>
         </a>
         <div id="collapseKeuangan" class="collapse {{ in_array($page, ['Laporan Keuangan', 'Penyusutan', 'Pinjaman']) ? 'show' : '' }}" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item {{ $page === 'Laporan Keuangan' ? 'active' : '' }}" href="#">Laporan Keuangan</a>
                 <a class="collapse-item {{ $page === 'Penyusutan' ? 'active' : '' }}" href="#">Penyusutan</a>
-                <a class="collapse-item {{ $page === 'Pinjaman' ? 'active' : '' }}" href="#">Pinjaman</a>
             </div>
         </div>
     </li>
