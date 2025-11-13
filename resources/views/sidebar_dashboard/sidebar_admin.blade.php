@@ -15,7 +15,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item {{ $page === 'Beranda' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin') }}">
+        <a class="nav-link" href="{{ url('/admin/dashboard') }}">
             <i class="fa-solid fa-house"></i>
             <span>Beranda</span>
         </a>

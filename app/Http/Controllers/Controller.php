@@ -49,17 +49,7 @@ class Controller extends BaseController
             'nama' => $request->nama,
         ]);
 
-        // Ambil role pengguna
-        $role = strtolower($user->role);
-
-        // Arahkan ke dashboard sesuai role
-        return match ($role) {
-            'admin' => redirect()->route('admin.dashboard')->with('success', 'Profil berhasil diperbarui!'),
-            'ketua' => redirect()->route('ketua.dashboard')->with('success', 'Profil berhasil diperbarui!'),
-            'divisi keuangan' => redirect()->route('keuangan.dashboard')->with('success', 'Profil berhasil diperbarui!'),
-            'divisi upja' => redirect()->route('upja.dashboard')->with('success', 'Profil berhasil diperbarui!'),
-            'anggota' => redirect()->route('anggota.dashboard')->with('success', 'Profil berhasil diperbarui!'),
-            default => redirect('/')->with('success', 'Profil berhasil diperbarui!'),
-        };
+        // Tetap di halaman profil dengan pesan sukses
+        return redirect()->route('profile')->with('success', 'Profil berhasil diperbarui!');
     }
 }
