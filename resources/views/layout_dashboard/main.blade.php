@@ -18,6 +18,9 @@
     <!-- Custom styles for this template-->
     <link href="/Admin_Template/css/sb-admin-2.min.css" rel="stylesheet">
 
+        <!-- Custom styles for this page -->
+    <link href="/Admin_Template/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
     <!-- SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -134,6 +137,23 @@
     <script src="/Admin_Template/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="/Admin_Template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
      <script src="/Admin_Template/js/demo/datatables-demo.js"></script>
+     <!-- Bootstrap core JavaScript-->
+    <script src="/Admin_Template/vendor/jquery/jquery.min.js"></script>
+    <script src="/Admin_Template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/Admin_Template/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/Admin_Template/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/Admin_Template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/Admin_Template/js/demo/datatables-demo.js"></script>
+
 
 
     <script>
