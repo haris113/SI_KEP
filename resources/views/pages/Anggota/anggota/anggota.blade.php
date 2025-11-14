@@ -8,15 +8,13 @@
             <!-- Main Content -->
             <div id="content">
 
-                
-
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+         <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <br>
-                    <h2 class="h3 mb-2 text-gray-800">DATA ANGGOTA KELEMBAGAAN</h2>
-                    <br>
+        <br>
+            <h2 class="h3 mb-2 text-gray-800">DATA ANGGOTA KELEMBAGAAN</h2>
+        <br>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-body">
