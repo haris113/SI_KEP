@@ -110,7 +110,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright © <span id="year"></span> SI-KEPT</span>
+                        <span>Copyright © <span id="year"></span> SI-KEP</span>
                     </div>
                 </div>
             </footer>
