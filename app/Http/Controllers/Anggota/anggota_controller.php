@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Anggota;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\anggota_model;
 
 class anggota_controller extends Controller
 {
@@ -17,12 +18,15 @@ class anggota_controller extends Controller
     }
     public function anggota()
     {
-        $data =[
-        'title' => 'Anggota | SI-KEP',
-        'page'  => 'Anggota',
+        $data = [
+            'title' => 'Anggota | SI-KEP',
+            'page'  => 'Anggota',
+            'anggota' => anggota_model::all()
         ];
-        return view('pages.Anggota.anggota.anggota',$data);
+
+        return view('pages.Anggota.anggota.anggota', $data);
     }
+
 
     public function detail_anggota()
     {

@@ -23,7 +23,7 @@
 
     <!-- Nav Item - Anggota -->
     <li class="nav-item {{ $page === 'Anggota' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('/anggota/anggota') }}">
+        <a class="nav-link" href="{{ url('anggota.index') }}">
             <i class="fa-solid fa-users fa-fw"></i>
             <span>Anggota</span>
         </a>

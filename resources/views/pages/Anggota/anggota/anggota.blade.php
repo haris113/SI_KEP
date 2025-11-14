@@ -34,30 +34,33 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Joni</td>
-                        <td>Desa Sungai Riam</td>
-                        <td>082133442242</td>
-                        <td>Ketua</td>
-                        <td>2011/04/25</td>
+    @foreach ($anggota as $index => $a)
+        <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ $a->nama }}</td>
+            <td>{{ $a->alamat }}</td>
+            <td>{{ $a->no_hp }}</td>
+            <td>{{ $a->jabatan ?? '-' }}</td>
+            <td>{{ $a->tanggal_bergabung ?? '-' }}</td>
 
-                        <td>
-                            <a href="" class="btn btn-sm btn-info" title="Detail">
-                                <i class="fas fa-eye"></i>
-                            </a>
+            <td>
+                <a href="#" class="btn btn-sm btn-info" title="Detail">
+                    <i class="fas fa-eye"></i>
+                </a>
 
-                            <a href="" class="btn btn-sm btn-warning text-white" title="Edit">
-                                <i class="fas fa-edit"></i>
-                            </a>
+                <a href="#" class="btn btn-sm btn-warning text-white" title="Edit">
+                    <i class="fas fa-edit"></i>
+                </a>
 
-                            <a href="" class="btn btn-sm btn-danger" title="Hapus"
-                                onclick="return confirm('Yakin ingin menghapus?')">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
+                <a href="#" class="btn btn-sm btn-danger" title="Hapus"
+                    onclick="return confirm('Yakin ingin menghapus?')">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+    @endforeach
+</tbody>
+
 
             </table>
         </div>

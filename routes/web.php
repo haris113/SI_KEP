@@ -49,6 +49,7 @@ Route::middleware(['verifikasi_role:divisi upja'])->group(function () {
 
 Route::middleware(['verifikasi_role:anggota'])->group(function () {
    Route::get('/anggota/dashboard', [anggota_controller::class, 'index'])->name('anggota.dashboard');
-   Route::get('/anggota/anggota', [anggota_controller::class, 'anggota'])->name('anggota.anggota');
+   Route::get('/anggota/anggota', [anggota_controller::class, 'anggota'])->name('anggota.index');
+   Route::get('/anggota/data', [proses_anggota_controller::class, 'anggota'])->name('anggota.data');
    Route::get('/anggota/detail_anggota', [anggota_controller::class, 'detail_anggota'])->name('anggota.detail_anggota');
 });
