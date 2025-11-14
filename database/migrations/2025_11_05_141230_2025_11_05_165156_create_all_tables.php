@@ -39,7 +39,6 @@ return new class extends Migration
         $table->string('nama');
         $table->string('alamat');
         $table->string('no_hp');
-        $table->unsignedBigInteger('id_role');
         $table->unsignedBigInteger('id_foto')->nullable();
         $table->string('jabatan')->nullable();
         $table->date('tanggal_bergabung')->nullable();
