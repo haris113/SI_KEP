@@ -17,11 +17,13 @@
                     <thead>
                         <tr>
                             <th style="width: 5%" data-orderable="false">No</th>
-                            <th data-orderable="false">Nama</th>
+                            <th data-orderable="false">Nama Lembaga</th>
+                            <th data-orderable="false">Jenis Lembaga</th>
                             <th data-orderable="false">Alamat</th>
-                            <th style="width: 10%" data-orderable="false">No HP</th>
-                            <th style="width: 10%" data-orderable="false">Jabatan</th>
-                            <th style="width: 10%">Tanggal Gabung</th>
+                            <th data-orderable="false">Tahun Berdiri</th>
+                            <th data-orderable="false">Status Kelembagaan</th>
+                            <th data-orderable="false">No Registrasi</th>
+                            <th data-orderable="false">Tanggal Terdaftar</th>
                             <th style="width: 12%" data-orderable="false">Aksi</th>
                         </tr>
                     </thead>
@@ -30,11 +32,13 @@
                         @foreach ($anggota as $index => $a)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $a->nama }}</td>
+                            <td>{{ $a->nama_lembaga }}</td>
+                            <td>{{ $a->jenis_lembaga }}</td>
                             <td>{{ $a->alamat }}</td>
-                            <td>{{ $a->no_hp }}</td>
-                            <td>{{ $a->jabatan ?? '-' }}</td>
-                            <td>{{ $a->tanggal_bergabung ?? '-' }}</td>
+                            <td>{{ $a->tahun_berdiri }}</td>
+                            <td>{{ $a->status_lembaga }}</td>
+                            <td>{{ $a->nomer_registrasi }}</td>
+                            <td>{{ $a->tanggal_terdaftar }}</td>
 
                             <td>
                                 <a href="#" class="btn btn-sm btn-info" title="Detail">

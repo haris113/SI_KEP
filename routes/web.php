@@ -50,6 +50,16 @@ Route::middleware(['verifikasi_role:divisi upja'])->group(function () {
 Route::middleware(['verifikasi_role:anggota'])->group(function () {
    Route::get('/anggota/dashboard', [anggota_controller::class, 'index'])->name('anggota.dashboard');
    Route::get('/anggota/anggota', [anggota_controller::class, 'anggota'])->name('anggota.anggota');
-   Route::get('/anggota/data', [proses_anggota_controller::class, 'anggota'])->name('anggota.data');
    Route::get('/anggota/detail_anggota', [anggota_controller::class, 'detail_anggota'])->name('anggota.detail_anggota');
+   Route::get('/anggota/kegiatan', [anggota_controller::class, 'kegiatan'])->name('anggota.kegiatan');
+   Route::get('/anggota/detail_kegiatan', [anggota_controller::class, 'detail_kegiatan'])->name('anggota.detail_kegiatam');
+   Route::get('/anggota/kelembagaan', [anggota_controller::class, 'kelembagaan'])->name('anggota.kelembagaan');
+   Route::get('/anggota/arsip_dokumen', [anggota_controller::class, 'arsip_dokumen'])->name('anggota.arsip_dokument');
+   Route::get('/anggota/laporan_keuangan', [anggota_controller::class, 'laporan_keuangan'])->name('anggota._laporan_keuangan');
+   Route::get('/anggota/penyusutan', [anggota_controller::class, 'penyusutan'])->name('anggota.penyusutan');
+   Route::get('/anggota/pinjaman', [anggota_controller::class, 'pinjaman'])->name('anggota.pinjaman');
+   Route::get('/anggota/perawatan_alsintan', [anggota_controller::class, 'perawatan_alsintan'])->name('anggota.perawatan_alsintan');
+   Route::get('/anggota/penggunaan_alsintan', [anggota_controller::class, 'penggunaan_alsintan'])->name('anggota.penggunaan_alsintan');
+   Route::get('/anggota/laporan_upja', [anggota_controller::class, 'laporan_upja'])->name('anggota.laporan_upja');
+   Route::get('/anggota/operator', [anggota_controller::class, 'operator'])->name('anggota.operator');
 });

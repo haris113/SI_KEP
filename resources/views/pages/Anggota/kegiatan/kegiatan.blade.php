@@ -17,11 +17,8 @@
                     <thead>
                         <tr>
                             <th style="width: 5%" data-orderable="false">No</th>
-                            <th data-orderable="false">Nama</th>
-                            <th data-orderable="false">Alamat</th>
-                            <th style="width: 10%" data-orderable="false">No HP</th>
-                            <th style="width: 10%" data-orderable="false">Jabatan</th>
-                            <th style="width: 10%">Tanggal Gabung</th>
+                            <th data-orderable="false">Nama Kegiatan</th>
+                            <th data-orderable="false">Keterangan</th>
                             <th style="width: 12%" data-orderable="false">Aksi</th>
                         </tr>
                     </thead>
@@ -30,11 +27,9 @@
                         @foreach ($anggota as $index => $a)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $a->nama }}</td>
-                            <td>{{ $a->alamat }}</td>
-                            <td>{{ $a->no_hp }}</td>
-                            <td>{{ $a->jabatan ?? '-' }}</td>
-                            <td>{{ $a->tanggal_bergabung ?? '-' }}</td>
+                            <td>{{ $a->nama_kegiatan }}</td>
+                            <td>{{ $a->keterangan }}</td>
+
 
                             <td>
                                 <a href="#" class="btn btn-sm btn-info" title="Detail">

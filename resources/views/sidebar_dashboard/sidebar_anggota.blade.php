@@ -31,7 +31,7 @@
 
     <!-- Nav Item - Kegiatan -->
     <li class="nav-item {{ $page === 'Kegiatan' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin/Kegiatan') }}">
+        <a class="nav-link" href="{{ url('/anggota/kegiatan') }}">
             <i class="fa-solid fa-chart-line fa-fw"></i>
             <span>Kegiatan</span>
         </a>
@@ -39,15 +39,15 @@
 
     <!-- Nav Item - Kelembagaan -->
     <li class="nav-item {{ $page === 'Kelembagaan' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin/Kelembagaan') }}">
+        <a class="nav-link" href="{{ url('/anggota/kelembagaan') }}">
             <i class="fa-solid fa-building-columns fa-fw"></i>
             <span>Kelembagaan</span>
         </a>
     </li>
 
     <!-- Nav Item - Arsip Dokumen -->
-    <li class="nav-item {{ $page === 'Arsip' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin/Arsip') }}">
+    <li class="nav-item {{ $page === 'arsip_dokumen' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('/anggota/arsip_dokumen') }}">
             <i class="fa-solid fa-file-lines fa-fw"></i>
             <span>Arsip Dokumen</span>
         </a>
@@ -63,9 +63,9 @@
         </a>
         <div id="collapseKeuangan" class="collapse {{ in_array($page, ['Laporan Keuangan', 'Penyusutan', 'Pinjaman']) ? 'show' : '' }}" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item {{ $page === 'Laporan Keuangan' ? 'active' : '' }}" href="#">Laporan Keuangan</a>
-                <a class="collapse-item {{ $page === 'Penyusutan' ? 'active' : '' }}" href="#">Penyusutan</a>
-                <a class="collapse-item {{ $page === 'Pinjaman' ? 'active' : '' }}" href="#">Pinjaman</a>
+                <a class="collapse-item {{ $page === 'Laporan Keuangan' ? 'active' : '' }}" href="/anggota/laporan_keuangan">Laporan Keuangan</a>
+                <a class="collapse-item {{ $page === 'Penyusutan' ? 'active' : '' }}" href="/anggota/penyusutan">Penyusutan</a>
+                <a class="collapse-item {{ $page === 'Pinjaman' ? 'active' : '' }}" href="/anggota/pinjaman">Pinjaman</a>
             </div>
         </div>
     </li>
@@ -80,11 +80,11 @@
         </a>
         <div id="collapseUpja" class="collapse {{ in_array($page, ['Data Alsintan', 'Perawatan Alsintan', 'Penggunaan Alsintan', 'Laporan UPJA', 'Operator']) ? 'show' : '' }}" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item {{ $page === 'Data Alsintan' ? 'active' : '' }}" href="#">Data Alsintan</a>
-                <a class="collapse-item {{ $page === 'Perawatan Alsintan' ? 'active' : '' }}" href="#">Perawatan Alsintan</a>
-                <a class="collapse-item {{ $page === 'Penggunaan Alsintan' ? 'active' : '' }}" href="#">Penggunaan Alsintan</a>
-                <a class="collapse-item {{ $page === 'Laporan UPJA' ? 'active' : '' }}" href="#">Laporan UPJA</a>
-                <a class="collapse-item {{ $page === 'Operator' ? 'active' : '' }}" href="#">Operator</a>
+                <a class="collapse-item {{ $page === 'Data Alsintan' ? 'active' : '' }}" href="/anggota/data_alsintan">Data Alsintan</a>
+                <a class="collapse-item {{ $page === 'Perawatan Alsintan' ? 'active' : '' }}" href="/anggota/perawatan_alsintan">Perawatan Alsintan</a>
+                <a class="collapse-item {{ $page === 'Penggunaan Alsintan' ? 'active' : '' }}" href="/anggota/penggunaan_alsintan">Penggunaan Alsintan</a>
+                <a class="collapse-item {{ $page === 'Laporan UPJA' ? 'active' : '' }}" href="/anggota/laporan_upja">Laporan UPJA</a>
+                <a class="collapse-item {{ $page === 'Operator' ? 'active' : '' }}" href="/anggota/operator">Operator</a>
             </div>
         </div>
     </li>

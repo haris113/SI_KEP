@@ -12,14 +12,6 @@
                         @csrf
                         <div class="card-body">
 
-                            {{-- ALERT --}}
-                            @if(session('success'))
-                                <div class="alert alert-success">{{ session('success') }}</div>
-                            @endif
-                            @if(session('error'))
-                                <div class="alert alert-danger">{{ session('error') }}</div>
-                            @endif
-
                             {{-- USERNAME --}}
                             <div class="form-group form-group-default mt-3">
                                 <label>Username</label>
