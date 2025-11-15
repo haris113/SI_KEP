@@ -46,7 +46,7 @@
     </li>
 
     <!-- Nav Item - Arsip Dokumen -->
-    <li class="nav-item {{ $page === 'arsip_dokumen' ? 'active' : '' }}">
+    <li class="nav-item {{ $page === 'Arsip Dokumen' ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('/anggota/arsip_dokumen') }}">
             <i class="fa-solid fa-file-lines fa-fw"></i>
             <span>Arsip Dokumen</span>

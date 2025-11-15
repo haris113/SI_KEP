@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\anggota_model;
 use App\Models\kegiatan_model;
 use App\Models\kelembagaan_model;
-use App\Models\arsip_dokument_model;
+use App\Models\arsip_dokumen_model;
 use App\Models\penyusutan_model;
 use App\Models\pinjaman_model;
 use App\Models\data_alsintan_model;
@@ -74,13 +74,13 @@ class anggota_controller extends Controller
         $data = [
             'judul' => 'DATA ARSIP DOKUEMENT',
             'title' => 'Arsip Dokument | SI-KEP',
-            'page'  => 'Kelembagaan',
-            'anggota' => arsip_dokument_model::all()
+            'page'  => 'Arsip Dokumen',
+            'anggota' => arsip_dokumen_model::all()
         ];
 
-        return view('pages.Anggota.arsip_dokument.arsip_dokument', $data);
+        return view('pages.Anggota.arsip_dokumen.arsip_dokumen', $data);
     }
-    public function laproan_keuangan()
+    public function laporan_keuangan()
     {
         $data = [
             'judul' => 'DATA LAPORAN KEUANGAN',
