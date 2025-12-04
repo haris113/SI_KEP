@@ -77,17 +77,18 @@ class anggota_controller extends Controller
 
         return view('pages.Anggota.kegiatan.kegiatan', $data);
     }
-public function kelembagaan()
+    public function kelembagaan()
     {
         $data = [
-            'judul' => 'DATA KELEMBAGAAN',
-            'title' => 'Kelembagaan | SI-KEP',
-            'page'  => 'Kelembagaan',
-            'anggota' => kelembagaan_model::all()
+            'judul'       => 'DATA KELEMBAGAAN',
+            'title'       => 'Kelembagaan | SI-KEP',
+            'page'        => 'Kelembagaan',
+            'kelembagaan' => kelembagaan_model::all()
         ];
 
         return view('pages.Anggota.kelembagaan.kelembagaan', $data);
     }
+
 
 
     public function arsip_dokumen()
