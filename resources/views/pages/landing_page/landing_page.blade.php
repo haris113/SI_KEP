@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -33,24 +33,6 @@
                         <li class="nav-item"><a class="nav-link" href="#team">Anggota</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url('/login') }}">Login</a></li>
-                        {{-- <li class="nav-item"><a class="nav-link login-btn" href="{{ url('/login') }}">Login</a></li>
-                        <style>
-                        .login-btn {
-                        background-color: #ffffff8d;
-                        /* opacity: 30%; */
-                        color: white ;
-                        padding: 8px 16px;
-                        border-radius: 6px;
-                        text-decoration: rgb(255, 106, 0);
-                        transition: 0.3s;
-                         }
-                        .login-btn:hover {
-                        text-decoration: rgb(255, 208, 0);
-                        font: bold;
-                        background-color: #ffffffef;
-                        }
-                        </style> --}}
-
 
                     </ul>
                 </div>
@@ -628,4 +610,310 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
+</html> --}}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{{$title}}</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="/Landing_Page/assets/img/logoSi_KEP.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/Landing_Page/css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="/Landing_Page/assets/img/logoSi_KEP.png" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Pengurus</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Jasa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Kegiatan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/login') }}">Login</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Selamat Datang!</div>
+               <br>
+               <div class="masthead-heading text-uppercase"><h1><bold>PROFIL KELEMBAGAAN EKONOMI PETANI<br>BERKAH MEMBANGUN BERSAMA<br>DESA SUNGAI RIAM </bold></h1></div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#pengajuan">Pengajuan Surat</a>
+            </div>
+        </header>
+       
+        <!-- profil-->
+        <section class="page-section" id="profil">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Profil</h2>
+                    <h3 class="section-subheading text-muted">Visi Misi Prodi Teknologi Informasi</h3>
+                </div>
+                <div class="row text-justify pl-5 pr-5">
+                    <p><center><b>VISI</b><br>Menjadi program studi terbaik di bidang Teknologi Informasi se-Kalimantan dan berdaya saing nasional pada tahun 2024.</p></center>
+                    <p><center><b>MISI</b><br>
+                    <tr>Menyelenggarakan dan mengembangkan pendidikan vokasi yang sesuai dengan kompetensi terstandar SKKNI level 5 di bidang Teknologi Informasi yang sesuai dengan kebutuhan industri di wilayah Kalimantan tahun 2024.</tr><br>
+                    <tr>Menyelenggarakan penelitian dan pengabdian di bidang Teknologi Informasi secara berkelanjutan, yang mengelola dan memanfaatkan potensi lokal sehingga bermanfaat bagi masyarakat dan negara indonesia.</tr><br>
+                    <tr>Mengoptimalkan penggunaan sistem berbasis IT yang terintegrasi dalam penyelenggaraan tridarma perguruan tinggi agar efektif, efisien dan akuntabel.</tr><br>
+                    <tr>Meningkatkan Investasi sarana dan prasarana yang memenuhi kelayakan program studi Teknologi Informasi sesuai dengan kurikulum berbasis kebutuhan dunia industri.</tr></center>
+                    </p>
+                </div>
+        </section>
+
+<!-- Sekretariat KEP -->
+<section class="page-section bg-light" id="sekretariat">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Sekretariat KEP</h2>
+            <h3 class="section-subheading text-muted">Kelembagaan Ekonomi Petani Berkah Membangun Bersama</h3>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h4><b>Alamat Sekretariat</b></h4>
+                <p>
+                    Desa Sungai Riam, Kecamatan (isi sesuai), Kabupaten (isi sesuai) <br>
+                    Jam Operasional: Senin – Jumat, 08.00 – 16.00 <br>
+                    Email: kep.sungairiam@example.com <br>
+                    WA/Telp: 08xxxxxxxxxx
+                </p>
+            </div>
+
+            <div class="col-lg-6">
+                <img src="/Landing_Page/assets/img/sekretariat.jpg" class="img-fluid rounded shadow" alt="Foto Sekretariat">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sejarah Pembentukan -->
+<section class="page-section" id="sejarah">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Sejarah Pembentukan</h2>
+            <h3 class="section-subheading text-muted">KEP Berkah Membangun Bersama</h3>
+        </div>
+
+        <p class="text-center px-4">
+            Kelembagaan Ekonomi Petani Desa Sungai Riam dibentuk pada tahun 2020 sebagai upaya 
+            memperkuat daya saing komoditas pertanian desa. Pada tahun 2021 dilakukan musyawarah 
+            desa untuk menyusun struktur organisasi. Pada tahun 2022 KEP resmi berdiri dan mulai 
+            mengelola unit-unit usaha. Hingga kini, KEP aktif sebagai motor penggerak ekonomi petani.
+        </p>
+    </div>
+</section>
+
+<!-- Visi Misi -->
+<section class="page-section bg-light" id="visimisi">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Visi & Misi</h2>
+        </div>
+
+        <h4><b>Visi</b></h4>
+        <p>
+            Mewujudkan petani Desa Sungai Riam yang mandiri, inovatif, dan berdaya saing melalui 
+            penguatan kelembagaan ekonomi.
+        </p>
+
+        <h4 class="mt-4"><b>Misi</b></h4>
+        <ul>
+            <li>Meningkatkan kapasitas dan kompetensi petani.</li>
+            <li>Mengembangkan unit usaha produktif berbasis potensi lokal.</li>
+            <li>Meningkatkan jejaring kemitraan pemasaran hasil pertanian.</li>
+            <li>Mewujudkan tata kelola organisasi yang transparan dan profesional.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Struktur Kepengurusan -->
+<style>
+    .kep-slider {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 10px;
+    }
+    .kep-item {
+        min-width: 240px;
+        scroll-snap-align: start;
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    .kep-item img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+</style>
+
+<section class="page-section" id="pengurus">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Struktur Kepengurusan</h2>
+            <h3 class="section-subheading text-muted">KEP Berkah Membangun Bersama</h3>
+        </div>
+
+        <div class="kep-slider">
+            <div class="kep-item">
+                <img src="/Landing_Page/assets/img/pengurus/ketua.jpg" alt="">
+                <h4>Nama Ketua</h4>
+                <p>Ketua</p>
+            </div>
+
+            <div class="kep-item">
+                <img src="/Landing_Page/assets/img/pengurus/wakil.jpg" alt="">
+                <h4>Nama Wakil</h4>
+                <p>Wakil Ketua</p>
+            </div>
+
+            <div class="kep-item">
+                <img src="/Landing_Page/assets/img/pengurus/sekretaris.jpg" alt="">
+                <h4>Nama Sekretaris</h4>
+                <p>Sekretaris</p>
+            </div>
+
+            <div class="kep-item">
+                <img src="/Landing_Page/assets/img/pengurus/bendahara.jpg" alt="">
+                <h4>Nama Bendahara</h4>
+                <p>Bendahara</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Kegiatan Usaha -->
+<section class="page-section bg-light" id="usaha">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Kegiatan Usaha KEP</h2>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-lg-4 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4>Pengadaan Sarana Produksi</h4>
+                        <p>Penyediaan pupuk, benih unggul, dan alat produksi petani.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4>Pengolahan Hasil</h4>
+                        <p>Pengeringan, pengemasan, dan pengolahan hasil pertanian.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4>Pemasaran Bersama</h4>
+                        <p>Menjamin pemasaran hasil panen petani melalui kemitraan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dokumentasi -->
+<section class="page-section" id="dokumentasi">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Dokumentasi Kegiatan</h2>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-lg-4 mb-3">
+                <img src="/Landing_Page/assets/img/dok/1.jpg" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-lg-4 mb-3">
+                <img src="/Landing_Page/assets/img/dok/2.jpg" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-lg-4 mb-3">
+                <img src="/Landing_Page/assets/img/dok/3.jpg" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Kontak -->
+<section class="page-section bg-light" id="kontakkeP">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Kontak KEP</h2>
+        </div>
+
+        <div class="text-center mt-3">
+            <p><b>Alamat:</b> Desa Sungai Riam</p>
+            <p><b>Email:</b> kep.sungairiam@example.com</p>
+            <p><b>WhatsApp:</b> 08xxxxxxxxxx</p>
+        </div>
+    </div>
+</section>
+                              <!-- Bootstrap core JS-->
+                              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+               <!-- Core theme JS-->
+               <script src="js/scripts.js"></script>
+               <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+               <!-- * *                               SB Forms JS                               * *-->
+               <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+               <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+               <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+           </body>
+       </html>
+       
+
+
+    
+
+        <br><br><br><br><br><br><br><br><br><br>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/Landing_Page/js/scripts.js"></script>
+        <script> document.getElementById("year").textContent = new Date().getFullYear();</script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
 </html>
+
+
+
+
