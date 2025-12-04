@@ -37,18 +37,22 @@
                             <td>{{ $a->tanggal_bergabung ?? '-' }}</td>
 
                             <td>
-                                <a href="#" class="btn btn-sm btn-info" title="Detail">
+                                {{-- Tombol Detail --}}
+                                <a href="{{ route('anggota.detail_anggota', $a->id_anggota) }}" 
+                                   class="btn btn-sm btn-info" title="Detail">
                                     <i class="fas fa-eye"></i>
                                 </a>
 
+                                {{-- Tombol Edit --}}
                                 <a href="#" class="btn btn-sm btn-warning text-white" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>
 
+                                {{-- Tombol Hapus --}}
                                 <a href="#" 
-                                    class="btn btn-sm btn-danger" 
-                                    title="Hapus"
-                                    onclick="return confirm('Yakin ingin menghapus?')">
+                                   class="btn btn-sm btn-danger" 
+                                   title="Hapus"
+                                   onclick="return confirm('Yakin ingin menghapus?')">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                             </td>

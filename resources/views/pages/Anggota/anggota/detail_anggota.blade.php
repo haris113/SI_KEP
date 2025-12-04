@@ -3,51 +3,52 @@
 @section('content')
 <div id="content">
     <div class="container-fluid">
-        <h4 class="page-title">User Profile</h4>
+
+        <h4 class="page-title">{{ $judul }}</h4>
 
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-with-nav">
-                    <form action="{{ route('update.profile') }}" method="POST">
+
+                    <form action="#" method="POST">
                         @csrf
                         <div class="card-body">
-
-                            {{-- USERNAME --}}
-                            <div class="form-group form-group-default mt-3">
-                                <label>Username</label>
-                                <input type="text" class="form-control" name="username" value="{{ $user->username }}">
-                            </div>
 
                             {{-- NAMA --}}
                             <div class="form-group form-group-default mt-3">
                                 <label>Nama Lengkap</label>
-                                <input type="text" class="form-control" name="nama" value="{{ $user->nama }}">
+                                <input type="text" class="form-control" value="{{ $anggota->nama }}" readonly>
+                            </div>
+
+                            {{-- ALAMAT --}}
+                            <div class="form-group form-group-default mt-3">
+                                <label>Alamat</label>
+                                <input type="text" class="form-control" value="{{ $anggota->alamat }}" readonly>
+                            </div>
+
+                            {{-- NO HP --}}
+                            <div class="form-group form-group-default mt-3">
+                                <label>No Handphone</label>
+                                <input type="text" class="form-control" value="{{ $anggota->no_hp }}" readonly>
+                            </div>
+
+                            {{-- TANGGAL BERGABUNG --}}
+                            <div class="form-group form-group-default mt-3">
+                                <label>Tanggal Bergabung</label>
+                                <input type="text" class="form-control" value="{{ $anggota->tanggal_bergabung }}" readonly>
                             </div>
 
                             <div class="text-right mt-3">
-                                <button type="submit" class="btn btn-success">Simpan</button>
-
-                                {{-- Tombol Batal sesuai role --}}
-                                @php
-                                    $role = $user->role->role ?? '';
-
-                                    $dashboard = match ($role) {
-                                        'admin' => route('admin.dashboard'),
-                                        'ketua' => route('ketua.dashboard'),
-                                        'divisi keuangan' => route('keuangan.dashboard'),
-                                        'divisi upja' => route('upja.dashboard'),
-                                        'anggota' => route('anggota.dashboard'),
-                                        default => url('/'),
-                                    };
-                                @endphp
-
-                                <a href="{{ $dashboard }}" class="btn btn-danger">Batal</a>
+                                <a href="{{ url('anggota/anggota') }}" class="btn btn-danger">Kembali</a>
                             </div>
+
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 @endsection

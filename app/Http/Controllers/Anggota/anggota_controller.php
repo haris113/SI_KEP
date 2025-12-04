@@ -39,14 +39,20 @@ class anggota_controller extends Controller
     }
     
     
-    public function detail_anggota()
+    public function detail_anggota($id)
     {
-        $data =[
-            'title' => 'Detail Anggota | SI-KEP',
-            'page'  => 'Anggota',
+        $anggota = anggota_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'DETAIL ANGGOTA KELEMBAGAAN',
+            'title'  => 'Detail Anggota | SI-KEP',
+            'page'   => 'Anggota',
+            'anggota'=> $anggota
         ];
-        return view('pages.Anggota.anggota.detail_anggota',$data);
+
+        return view('pages.Anggota.anggota.detail_anggota', $data);
     }
+
     public function kegiatan()
     {
         $data = [

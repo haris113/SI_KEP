@@ -50,7 +50,8 @@ Route::middleware(['verifikasi_role:divisi upja'])->group(function () {
 Route::middleware(['verifikasi_role:anggota'])->group(function () {
    Route::get('/anggota/dashboard', [anggota_controller::class, 'index'])->name('anggota.dashboard');
    Route::get('/anggota/anggota', [anggota_controller::class, 'anggota'])->name('anggota.anggota');
-   Route::get('/anggota/detail_anggota', [anggota_controller::class, 'detail_anggota'])->name('anggota.detail_anggota');
+Route::get('/anggota/detail_anggota/{id}', [anggota_controller::class, 'detail_anggota'])
+    ->name('anggota.detail_anggota');
    Route::get('/anggota/kegiatan', [anggota_controller::class, 'kegiatan'])->name('anggota.kegiatan');
    Route::get('/anggota/detail_kegiatan', [anggota_controller::class, 'detail_kegiatan'])->name('anggota.detail_kegiatam');
    Route::get('/anggota/kelembagaan', [anggota_controller::class, 'kelembagaan'])->name('anggota.kelembagaan');
