@@ -22,7 +22,7 @@
                             <th style="width: 10%" data-orderable="false">No HP</th>
                             <th style="width: 10%" data-orderable="false">Jabatan</th>
                             <th style="width: 10%">Tanggal Gabung</th>
-                            <th style="width: 5%" data-orderable="false">Aksi</th>
+                            <th style="width: 12%" data-orderable="false">Aksi</th>
                         </tr>
                     </thead>
 
@@ -41,6 +41,19 @@
                                 <a href="{{ route('anggota.detail_anggota', $a->id_anggota) }}" 
                                    class="btn btn-sm btn-info" title="Detail">
                                     <i class="fas fa-eye"></i>
+                                </a>
+
+                                {{-- Tombol Edit --}}
+                                <a href="{{ route('anggota.edit_anggota', $a->id_anggota) }}" class="btn btn-sm btn-warning text-white" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+
+                                {{-- Tombol Hapus --}}
+                                <a href="#" 
+                                   class="btn btn-sm btn-danger" 
+                                   title="Hapus"
+                                   onclick="return confirm('Yakin ingin menghapus?')">
+                                    <i class="fas fa-trash-alt"></i>
                                 </a>
                             </td>
                         </tr>

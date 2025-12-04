@@ -143,6 +143,64 @@
     });
 </script>
 
+<script>
+// Tombol Batal
+document.getElementById('btnBatal').addEventListener('click', function() {
+    Swal.fire({
+        title: 'Yakin ingin membatalkan?',
+        text: "Perubahan yang sudah kamu buat tidak akan disimpan!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Ya, batal!',
+        cancelButtonText: 'Tidak'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "{{ url('anggota/anggota') }}";
+        }
+    });
+});
+
+// Tombol Simpan
+document.getElementById('btnSimpan').addEventListener('click', function() {
+    Swal.fire({
+        title: 'Simpan Data?',
+        text: "Pastikan semua data sudah benar.",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#28a745',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Ya, simpan!',
+        cancelButtonText: 'Tidak'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Submit form
+            document.querySelector('form').submit();
+        }
+    });
+});
+</script>
+
+{{-- SweetAlert2 --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    function saveConfirm() {
+        Swal.fire({
+            title: "Yakin ingin menyimpan?",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonText: "Ya, Simpan",
+            cancelButtonText: "Batal",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.querySelector("form").submit();
+            }
+        });
+    }
+</script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </body>

@@ -52,6 +52,19 @@ class anggota_controller extends Controller
 
         return view('pages.Anggota.anggota.detail_anggota', $data);
     }
+    public function edit_anggota($id)
+    {
+        $anggota = anggota_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'EDIT ANGGOTA KELEMBAGAAN',
+            'title'  => 'Edit Anggota | SI-KEP',
+            'page'   => 'Anggota',
+            'anggota'=> $anggota
+        ];
+
+        return view('pages.Anggota.anggota.edit_anggota', $data);
+    }
 
     public function kegiatan()
     {
@@ -64,7 +77,7 @@ class anggota_controller extends Controller
 
         return view('pages.Anggota.kegiatan.kegiatan', $data);
     }
-    public function kelembagaan()
+public function kelembagaan()
     {
         $data = [
             'judul' => 'DATA KELEMBAGAAN',
@@ -75,6 +88,8 @@ class anggota_controller extends Controller
 
         return view('pages.Anggota.kelembagaan.kelembagaan', $data);
     }
+
+
     public function arsip_dokumen()
     {
         $data = [
