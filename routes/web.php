@@ -34,6 +34,7 @@ Route::post('/logout', [proses_beranda_controller::class, 'logout'])->name('logo
 Route::middleware(['verifikasi_role:admin'])->group(function () {
      Route::get('/admin/dashboard', [admin_controller::class, 'index'])->name('admin.dashboard');
      Route::get('/admin/anggota', [admin_controller::class, 'anggota'])->name('admin.anggota');
+     Route::get('/admin/tambah_anggota', [admin_controller::class, 'tambah_anggota'])->name('admin.tambah_anggota');
      Route::get('/admin/detail_anggota/{id}', [admin_controller::class, 'detail_anggota'])->name('admin.detail_anggota');
      Route::get('/admin/edit_anggota/{id}', [admin_controller::class, 'edit_anggota'])->name('admin.edit_anggota');
 });

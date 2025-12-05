@@ -67,4 +67,17 @@ class admin_controller extends Controller
 
         return view('pages.Admin.anggota.edit_anggota', $data);
     }
+    public function tambah_anggota()
+    {
+        $anggota = anggota_model::all();
+
+        $data = [
+            'judul'  => 'TAMBAH ANGGOTA KELEMBAGAAN',
+            'title'  => 'Tambah Anggota | SI-KEP',
+            'page'   => 'Anggota',
+            'anggota'=> $anggota
+        ];
+
+        return view('pages.Admin.anggota.tambah_anggota', $data);
+    }
 }

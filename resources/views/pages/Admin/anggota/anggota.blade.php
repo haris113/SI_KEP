@@ -11,10 +11,12 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-
+                
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-
+                <a href="{{ url('admin/tambah_anggota') }}" class="btn btn-success">Tambah Data</a>
+                            <br><br>
                     <thead>
+                     
                         <tr>
                             <th style="width: 5%" data-orderable="false">No</th>
                             <th data-orderable="false">Nama</th>
