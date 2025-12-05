@@ -80,4 +80,57 @@ class admin_controller extends Controller
 
         return view('pages.Admin.anggota.tambah_anggota', $data);
     }
+
+            public function arsip_dokumen()
+    {
+        $data = [
+            'judul' => 'DATA ARSIP DOKUMEN KELEMBAGAAN',
+            'title' => 'Arsip Dokumen | SI-KEP',
+            'page'  => 'arsip_dokumen',
+            'arsip_dokumen' => arsip_dokumen_model::all()
+        ];
+
+        return view('pages.Admin.arsip_dokumen.arsip_dokumen', $data);
+    }
+    
+    
+    public function detail_arsip_dokumen($id)
+    {
+        $arsip_dokumen = arsip_dokumen_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'DETAIL ARSIP DOKUMEN',
+            'title'  => 'Detail Arsip Dokumen | SI-KEP',
+            'page'   => 'arsip_dokumen',
+            'arsip_dokumen'=> $arsip_dokumen
+        ];
+
+        return view('pages.Admin.arsip_dokumen.detail_arsip_dokumen', $data);
+    }
+    public function edit_arsip_dokumen($id)
+    {
+        $arsip_dokumen = arsip_dokumen_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'EDIT ARSIP DOKUMEN',
+            'title'  => 'Edit Arsip Dokumen | SI-KEP',
+            'page'   => 'arsip_dokumen',
+            'arsip_dokumen'=> $arsip_dokumen
+        ];
+
+        return view('pages.Admin.arsip_dokumen.edit_arsip_dokumen', $data);
+    }
+    public function tambah_arsip_dokumen()
+    {
+        $arsip_dokumen = arsip_dokumen_model::all();
+
+        $data = [
+            'judul'  => 'TAMBAH ARSIP DOKUMEN',
+            'title'  => 'Tambah Arsip Dokumen | SI-KEP',
+            'page'   => 'arsip_dokumen',
+            'arsip_dokumen'=> $arsip_dokumen
+        ];
+
+        return view('pages.Admin.arsip_dokumen.tambah_arsip_dokumen', $data);
+    }
 }
