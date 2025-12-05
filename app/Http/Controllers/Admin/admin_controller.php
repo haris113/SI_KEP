@@ -133,4 +133,17 @@ class admin_controller extends Controller
 
         return view('pages.Admin.arsip_dokumen.tambah_arsip_dokumen', $data);
     }
+
+    public function kelembagaan()
+    {
+        $data = [
+            'judul'       => 'DATA KELEMBAGAAN',
+            'title'       => 'Kelembagaan | SI-KEP',
+            'page'        => 'Kelembagaan',
+            'kelembagaan' => kelembagaan_model::all()
+        ];
+
+        return view('pages.Admin.kelembagaan.kelembagaan', $data);
+    }
+
 }

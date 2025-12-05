@@ -41,6 +41,7 @@ Route::middleware(['verifikasi_role:admin'])->group(function () {
      Route::get('/admin/tambah_arsip_dokumen', [admin_controller::class, 'tambah_arsip_dokumen'])->name('admin.tambah_arsip_dokumen');
      Route::get('/admin/detail_arsip_dokumen/{id}', [admin_controller::class, 'detail_arsip_dokumen'])->name('admin.detail_arsip_dokumen');
      Route::get('/admin/edit_arsip_dokumen/{id}', [admin_controller::class, 'edit_arsip_dokumen'])->name('admin.edit_arsip_dokumen');
+     Route::get('/admin/kelembagaan', [admin_controller::class, 'kelembagaan'])->name('admin.kelembagaan');
 });
 
 Route::middleware(['verifikasi_role:ketua'])->group(function () {
@@ -62,7 +63,7 @@ Route::middleware(['verifikasi_role:anggota'])->group(function () {
    Route::get('/anggota/edit_anggota/{id}', [anggota_controller::class, 'edit_anggota'])->name('anggota.edit_anggota');
    Route::get('/anggota/kegiatan', [anggota_controller::class, 'kegiatan'])->name('anggota.kegiatan');
    Route::get('/anggota/detail_kegiatan', [anggota_controller::class, 'detail_kegiatan'])->name('anggota.detail_kegiatan');
-  Route::get('/anggota/kelembagaan', [anggota_controller::class, 'kelembagaan'])->name('anggota.kelembagaan');
+   Route::get('/anggota/kelembagaan', [anggota_controller::class, 'kelembagaan'])->name('anggota.kelembagaan');
 
    Route::get('/anggota/arsip_dokumen', [anggota_controller::class, 'arsip_dokumen'])->name('anggota.arsip_dokument');
    Route::get('/anggota/laporan_keuangan', [anggota_controller::class, 'laporan_keuangan'])->name('anggota._laporan_keuangan');

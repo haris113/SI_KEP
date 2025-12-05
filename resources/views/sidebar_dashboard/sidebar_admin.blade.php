@@ -47,7 +47,7 @@
 
     <!-- Nav Item - Kelembagaan -->
     <li class="nav-item {{ $page === 'Kelembagaan' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin/Kelembagaan') }}">
+        <a class="nav-link" href="{{ url('admin/kelembagaan') }}">
             <i class="fa-solid fa-building-columns fa-fw"></i>
             <span>Kelembagaan</span>
         </a>
