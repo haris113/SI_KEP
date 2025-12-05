@@ -17,30 +17,38 @@
                             {{-- NAMA --}}
                             <div class="form-group form-group-default mt-3">
                                 <label>Nama Lengkap</label>
-                                <input type="text" class="form-control" value="{{ $anggota->nama }}" readonly>
+                                <input type="text" class="form-control" value="#">
                             </div>
 
                             {{-- ALAMAT --}}
                             <div class="form-group form-group-default mt-3">
                                 <label>Alamat</label>
-                                <input type="text" class="form-control" value="{{ $anggota->alamat }}" readonly>
+                                <input type="text" class="form-control" value="#" >
                             </div>
 
                             {{-- NO HP --}}
                             <div class="form-group form-group-default mt-3">
                                 <label>No Handphone</label>
-                                <input type="text" class="form-control" value="{{ $anggota->no_hp }}" readonly>
+                                <input type="text" class="form-control" value="#" >
                             </div>
 
                             {{-- TANGGAL BERGABUNG --}}
                             <div class="form-group form-group-default mt-3">
                                 <label>Tanggal Bergabung</label>
-                                <input type="text" class="form-control" value="{{ $anggota->tanggal_bergabung }}" readonly>
+                                <input type="text" class="form-control" value="#" >
                             </div>
 
-                            <div class="text-right mt-3">
-                                <a href="{{ url('admin/anggota') }}" class="btn btn-danger">Kembali</a>
-                            </div>
+                            <div class="text-right mt-3 d-flex justify-content-end gap-2">
+
+                            <!-- Tombol Batal -->
+                            <div class="text-right mt-2">
+                            <button type="button" class="btn btn-danger" id="btnBatal">
+                                Batal
+                            </button>
+
+                            <button type="submit" class="btn btn-success">Simpan</button>
+
+</div>
 
                         </div>
                     </form>

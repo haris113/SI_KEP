@@ -31,7 +31,7 @@
 
     <!-- Nav Item - Anggota -->
     <li class="nav-item {{ $page === 'Anggota' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin/Anggota') }}">
+        <a class="nav-link" href="{{ url('admin/anggota') }}">
             <i class="fa-solid fa-users fa-fw"></i>
             <span>Anggota</span>
         </a>
@@ -39,7 +39,7 @@
 
     <!-- Nav Item - Kegiatan -->
     <li class="nav-item {{ $page === 'Kegiatan' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin/Kegiatan') }}">
+        <a class="nav-link" href="{{ url('admin/kegiatan') }}">
             <i class="fa-solid fa-chart-line fa-fw"></i>
             <span>Kegiatan</span>
         </a>

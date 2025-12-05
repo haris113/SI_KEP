@@ -17,11 +17,8 @@
                     <thead>
                         <tr>
                             <th style="width: 5%" data-orderable="false">No</th>
-                            <th data-orderable="false">Nama</th>
-                            <th data-orderable="false">Alamat</th>
-                            <th style="width: 10%" data-orderable="false">No HP</th>
-                            <th style="width: 10%" data-orderable="false">Jabatan</th>
-                            <th style="width: 10%">Tanggal Gabung</th>
+                            <th data-orderable="false">Nama Kegiatan</th>
+                            <th data-orderable="false">Keterangan</th>
                             <th style="width: 12%" data-orderable="false">Aksi</th>
                         </tr>
                     </thead>
@@ -30,29 +27,23 @@
                         @foreach ($anggota as $index => $a)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $a->nama }}</td>
-                            <td>{{ $a->alamat }}</td>
-                            <td>{{ $a->no_hp }}</td>
-                            <td>{{ $a->jabatan ?? '-' }}</td>
-                            <td>{{ $a->tanggal_bergabung ?? '-' }}</td>
+                            <td>{{ $a->nama_kegiatan }}</td>
+                            <td>{{ $a->keterangan }}</td>
+
 
                             <td>
-                                {{-- Tombol Detail --}}
-                                <a href="{{ route('admin.detail_anggota', $a->id_anggota) }}" 
-                                   class="btn btn-sm btn-info" title="Detail">
+                                <a href="#" class="btn btn-sm btn-info" title="Detail">
                                     <i class="fas fa-eye"></i>
                                 </a>
 
-                                {{-- Tombol Edit --}}
-                                <a href="{{ route('admin.edit_anggota', $a->id_anggota) }}" class="btn btn-sm btn-warning text-white" title="Edit">
+                                <a href="#" class="btn btn-sm btn-warning text-white" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>
 
-                                {{-- Tombol Hapus --}}
                                 <a href="#" 
-                                   class="btn btn-sm btn-danger" 
-                                   title="Hapus"
-                                   onclick="return confirm('Yakin ingin menghapus?')">
+                                    class="btn btn-sm btn-danger" 
+                                    title="Hapus"
+                                    onclick="return confirm('Yakin ingin menghapus?')">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                             </td>
