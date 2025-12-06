@@ -19,17 +19,7 @@
                 </a>
             </div>
 
-            <!-- Penyusutan -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card shadow-sm border-0 py-4 hover-shadow">
-                        <div class="card-body">
-                            <i class="fa-solid fa-chart-line fa-2x mb-2 text-success"></i>
-                            <h6 class="font-weight-bold mb-0">Penyusutan</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            
 
             <!-- Pinjaman -->
             <div class="col-xl-3 col-md-6 mb-4">

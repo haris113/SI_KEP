@@ -30,13 +30,19 @@ Route::post('/login', [proses_beranda_controller::class, 'proses_login'])->name(
 Route::get('/logout', [proses_beranda_controller::class, 'logout'])->name('logout');
 Route::post('/logout', [proses_beranda_controller::class, 'logout'])->name('logout');
 
-// Hanya role tertentu yang bisa akses route di bawah ini
+
+
+//                              Hanya role tertentu yang bisa akses route di bawah ini
+
+// ---------------------------------------   ROLE ADMIN -------------------------------------------------------
 Route::middleware(['verifikasi_role:admin'])->group(function () {
      Route::get('/admin/dashboard', [admin_controller::class, 'index'])->name('admin.dashboard');
+
      Route::get('/admin/anggota', [admin_controller::class, 'anggota'])->name('admin.anggota');
      Route::get('/admin/tambah_anggota', [admin_controller::class, 'tambah_anggota'])->name('admin.tambah_anggota');
      Route::get('/admin/detail_anggota/{id}', [admin_controller::class, 'detail_anggota'])->name('admin.detail_anggota');
      Route::get('/admin/edit_anggota/{id}', [admin_controller::class, 'edit_anggota'])->name('admin.edit_anggota');
+
      Route::get('/admin/kegiatan', [admin_controller::class, 'kegiatan'])->name('admin.kegiatan');
      Route::get('/admin/tambah_kegiatan', [admin_controller::class, 'tambah_kegiatan'])->name('admin.tambah_kegiatan');
      Route::get('/admin/detail_kegiatan/{id}', [admin_controller::class, 'detail_kegiatan'])->name('admin.detail_kegiatan');
@@ -46,28 +52,41 @@ Route::middleware(['verifikasi_role:admin'])->group(function () {
      Route::get('/admin/tambah_arsip_dokumen', [admin_controller::class, 'tambah_arsip_dokumen'])->name('admin.tambah_arsip_dokumen');
      Route::get('/admin/detail_arsip_dokumen/{id}', [admin_controller::class, 'detail_arsip_dokumen'])->name('admin.detail_arsip_dokumen');
      Route::get('/admin/edit_arsip_dokumen/{id}', [admin_controller::class, 'edit_arsip_dokumen'])->name('admin.edit_arsip_dokumen');
+
      Route::get('/admin/kelembagaan', [admin_controller::class, 'kelembagaan'])->name('admin.kelembagaan');
+
+
 });
+
+// ---------------------------------------   ROLE KETUA --------------------------------------------------------
 
 Route::middleware(['verifikasi_role:ketua'])->group(function () {
      Route::get('/ketua/dashboard', [ketua_controller::class, 'index'])->name('ketua.dashboard');
 });
 
+// ---------------------------------------   ROLE DIVISI KEUANGAN ----------------------------------------------
+
 Route::middleware(['verifikasi_role:divisi keuangan'])->group(function () {
     Route::get('/keuangan/dashboard', [divisi_keuangan_controller::class, 'index'])->name('keuangan.dashboard');
 });
+
+// ---------------------------------------   ROLE DIVISI UPJA --------------------------------------------------
 
 Route::middleware(['verifikasi_role:divisi upja'])->group(function () {
     Route::get('/upja/dashboard', [divisi_upja_controller::class, 'index'])->name('upja.dashboard');
 });
 
+// ---------------------------------------   ROLE ANGGOTA ------------------------------------------------------
+
 Route::middleware(['verifikasi_role:anggota'])->group(function () {
    Route::get('/anggota/dashboard', [anggota_controller::class, 'index'])->name('anggota.dashboard');
+
    Route::get('/anggota/anggota', [anggota_controller::class, 'anggota'])->name('anggota.anggota');
    Route::get('/anggota/detail_anggota/{id}', [anggota_controller::class, 'detail_anggota'])->name('anggota.detail_anggota');
    Route::get('/anggota/edit_anggota/{id}', [anggota_controller::class, 'edit_anggota'])->name('anggota.edit_anggota');
    Route::get('/anggota/kegiatan', [anggota_controller::class, 'kegiatan'])->name('anggota.kegiatan');
    Route::get('/anggota/detail_kegiatan', [anggota_controller::class, 'detail_kegiatan'])->name('anggota.detail_kegiatan');
+
    Route::get('/anggota/kelembagaan', [anggota_controller::class, 'kelembagaan'])->name('anggota.kelembagaan');
 
    Route::get('/anggota/arsip_dokumen', [anggota_controller::class, 'arsip_dokumen'])->name('anggota.arsip_dokument');

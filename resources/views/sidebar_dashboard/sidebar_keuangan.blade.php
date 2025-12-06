@@ -22,9 +22,9 @@
     </li>
 
     <!-- Nav Item - Divisi Keuangan -->
-    <li class="nav-item {{ in_array($page, ['Laporan Keuangan', 'Penyusutan', 'Pinjaman']) ? 'active' : '' }}">
+    <li class="nav-item {{ in_array($page, ['Laporan Keuangan', 'Pinjaman']) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKeuangan"
-            aria-expanded="{{ in_array($page, ['Laporan Keuangan', 'Penyusutan', 'Pinjaman']) ? 'true' : 'false' }}"
+            aria-expanded="{{ in_array($page, ['Laporan Keuangan', 'Pinjaman']) ? 'true' : 'false' }}"
             aria-controls="collapseKeuangan">
             <i class="fa-solid fa-wallet fa-fw"></i>
             <span>Divisi Keuangan</span>
@@ -32,7 +32,6 @@
         <div id="collapseKeuangan" class="collapse {{ in_array($page, ['Laporan Keuangan', 'Penyusutan', 'Pinjaman']) ? 'show' : '' }}" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item {{ $page === 'Laporan Keuangan' ? 'active' : '' }}" href="#">Laporan Keuangan</a>
-                <a class="collapse-item {{ $page === 'Penyusutan' ? 'active' : '' }}" href="#">Penyusutan</a>
                 <a class="collapse-item {{ $page === 'Pinjaman' ? 'active' : '' }}" href="#">Pinjaman</a>
             </div>
         </div>
