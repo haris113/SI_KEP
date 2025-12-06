@@ -146,4 +146,56 @@ class admin_controller extends Controller
         return view('pages.Admin.kelembagaan.kelembagaan', $data);
     }
 
+    public function kegiatan()
+    {
+        $data = [
+            'judul' => 'DATA KEGIATAN KELEMBAGAAN',
+            'title' => 'Kegiatan | SI-KEP',
+            'page'  => 'kegiatan',
+            'kegiatan' => kegiatan_model::all()
+        ];
+
+        return view('pages.Admin.kegiatan.kegiatan', $data);
+    }
+    
+    
+    public function detail_kegiatan($id)
+    {
+        $kegiatan = kegiatan_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'DETAIL KEGIATAN',
+            'title'  => 'Detail Kegiatan | SI-KEP',
+            'page'   => 'kegiatan',
+            'kegiatan'=> $kegiatan
+        ];
+
+        return view('pages.Admin.kegiatan.detail_kegiatan', $data);
+    }
+    public function edit_kegiatan($id)
+    {
+        $kegiatan = kegiatan_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'EDIT KEGIATAN',
+            'title'  => 'Edit Kegiatan | SI-KEP',
+            'page'   => 'kegiatan',
+            'kegiatan'=> $kegiatan
+        ];
+
+        return view('pages.Admin.kegiatan.edit_kegiatan', $data);
+    }
+    public function tambah_kegiatan()
+    {
+        $kegiatan = kegiatan_model::all();
+
+        $data = [
+            'judul'  => 'TAMBAH KEGIATAN',
+            'title'  => 'Tambah Kegiatan | SI-KEP',
+            'page'   => 'kegiatan',
+            'kegiatan'=> $kegiatan
+        ];
+
+        return view('pages.Admin.kegiatan.tambah_kegiatan', $data);
+}
 }

@@ -11,39 +11,46 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-
+                
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-
+                <a href="{{ url('admin/tambah_kegiatan') }}" class="btn btn-success">Tambah Data</a>
+                            <br><br>
                     <thead>
+                     
                         <tr>
                             <th style="width: 5%" data-orderable="false">No</th>
                             <th data-orderable="false">Nama Kegiatan</th>
                             <th data-orderable="false">Keterangan</th>
+                            <th style="width: 15%" data-orderable="false">Foto</th>
                             <th style="width: 12%" data-orderable="false">Aksi</th>
+                            
                         </tr>
                     </thead>
 
                     <tbody>
-                        @foreach ($anggota as $index => $a)
+                        @foreach ($kegiatan as $index => $a)
                         <tr>
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $a->nama_kegiatan }}</td>
                             <td>{{ $a->keterangan }}</td>
-
-
+                            <td>{{ $a->id_foto }}</td>
                             <td>
-                                <a href="#" class="btn btn-sm btn-info" title="Detail">
+                                {{-- Tombol Detail --}}
+                                <a href="{{ route('admin.detail_kegiatan', $a->id_kegiatan) }}" 
+                                   class="btn btn-sm btn-info" title="Detail">
                                     <i class="fas fa-eye"></i>
                                 </a>
 
-                                <a href="#" class="btn btn-sm btn-warning text-white" title="Edit">
+                                {{-- Tombol Edit --}}
+                                <a href="{{ route('admin.edit_kegiatan', $a->id_kegiatan) }}" class="btn btn-sm btn-warning text-white" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>
 
+                                {{-- Tombol Hapus --}}
                                 <a href="#" 
-                                    class="btn btn-sm btn-danger" 
-                                    title="Hapus"
-                                    onclick="return confirm('Yakin ingin menghapus?')">
+                                   class="btn btn-sm btn-danger" 
+                                   title="Hapus"
+                                   onclick="return confirm('Yakin ingin menghapus?')">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                             </td>
