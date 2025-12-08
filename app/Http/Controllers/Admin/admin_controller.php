@@ -14,6 +14,7 @@ use App\Models\data_alsintan_model;
 use App\Models\perawatan_alsintan_model;
 use App\Models\penggunaan_alsintan_model;
 use App\Models\laporan_upja_model;
+use App\Models\frekuensi_keuangan_model;
 use App\Models\operator_model;
 
 class admin_controller extends Controller
@@ -197,5 +198,58 @@ class admin_controller extends Controller
         ];
 
         return view('pages.Admin.kegiatan.tambah_kegiatan', $data);
+}
+
+ public function frekuensi_keuangan()
+    {
+        $data = [
+            'judul' => 'DATA LAPORAN KEUANGAN (KAS) KELEMBAGAAN',
+            'title' => 'Kas Keuangan | SI-KEP',
+            'page'  => 'frekuensi_keuangan',
+            'frekuensi_keuangan' => frekuensi_keuangan_model::all()
+        ];
+
+        return view('pages.Admin.frekuensi_keuangan.frekuensi_keuangan', $data);
+    }
+    
+    
+    public function detail_frekuensi_keuangan($id)
+    {
+        $frekuensi_keuangan = frekuensi_keuangan_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'DETAIL LAPORAN KEUANGAN (KAS) KELEMBAGAAN',
+            'title'  => 'Detail Kas Keuangan | SI-KEP',
+            'page'   => 'frekuensi_keuangan',
+            'frekuensi_keuangan'=> $frekuensi_keuangan
+        ];
+
+        return view('pages.Admin.frekuensi_keuangan.detail_frekuensi_keuangan', $data);
+    }
+    public function edit_frekuensi_keuangan($id)
+    {
+        $frekuensi_keuangan = frekuensi_keuangan_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'EDIT LAPORAN KEUANGAN (KAS) KELEMBAGAAN',
+            'title'  => 'Edit Kas Keuangan | SI-KEP',
+            'page'   => 'frekuensi_keuangan',
+            'frekuensi_keuangan'=> $frekuensi_keuangan
+        ];
+
+        return view('pages.Admin.frekuensi_keuangan.edit_frekuensi_keuangan', $data);
+    }
+    public function tambah_frekuensi_keuangan()
+    {
+        $frekuensi_keuangan = frekuensi_keuangan_model::all();
+
+        $data = [
+            'judul'  => 'TAMBAH LAPORAN KEUANGAN (KAS) KELEMBAGAAN',
+            'title'  => 'Tambah Kas Keuangan | SI-KEP',
+            'page'   => 'frekuensi_keuangan',
+            'frekuensi_keuangan'=> $frekuensi_keuangan
+        ];
+
+        return view('pages.Admin.frekuensi_keuangan.tambah_frekuensi_keuangan', $data);
 }
 }

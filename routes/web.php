@@ -53,6 +53,11 @@ Route::middleware(['verifikasi_role:admin'])->group(function () {
      Route::get('/admin/detail_arsip_dokumen/{id}', [admin_controller::class, 'detail_arsip_dokumen'])->name('admin.detail_arsip_dokumen');
      Route::get('/admin/edit_arsip_dokumen/{id}', [admin_controller::class, 'edit_arsip_dokumen'])->name('admin.edit_arsip_dokumen');
 
+     Route::get('/admin/laporan_keuangan', [admin_controller::class, 'laporan_keuangan'])->name('admin.laporan_keuangan');
+     Route::get('/admin/tambah_laporan_keuangan', [admin_controller::class, 'tambah_laporan_keuangan'])->name('admin.tambah_laporan_keuangan');
+     Route::get('/admin/detail_laporan_keuangan/{id}', [admin_controller::class, 'detail_laporan_keuangan'])->name('admin.detail_laporan_keuangan');
+     Route::get('/admin/edit_laporan_keuangan/{id}', [admin_controller::class, 'edit_laporan_keuangan'])->name('admin.edit_laporan_keuangan');
+
      Route::get('/admin/kelembagaan', [admin_controller::class, 'kelembagaan'])->name('admin.kelembagaan');
 
 
