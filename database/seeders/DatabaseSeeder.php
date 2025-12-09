@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             kegiatan_seeder::class,
             kelembagaan_seeder::class,
             arsipDokumen_seeder::class,
-            frekuensikeuangan_seeder::class,
+            laporankeuangan_seeder::class,
             alsintan_seeder::class,
             penyusutan_seeder::class,
             pinjaman_seeder::class,

@@ -12,9 +12,18 @@
         <div class="card-body">
             <div class="table-responsive">
                 
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <a href="{{ url('admin/tambah_laporan_keuangan') }}" class="btn btn-success">Tambah Data</a>
-                            <br><br>
+           
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <a href="{{ url('admin/tambah_laporan_keuangan') }}" class="btn btn-success">Tambah Data</a>
+
+        <div class="alert alert-info m-0">
+            <strong>Total Saldo: </strong>
+            Rp. {{ number_format($saldo, 0, ',', '.') }}
+        </div>
+    </div>
+
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
                     <thead>
                      
                         <tr>
@@ -28,7 +37,7 @@
                     </thead>
 
                     <tbody>
-                        @foreach ($frekuensi_keuangan as $index => $a)
+                        @foreach ($laporan_keuangan as $index => $a)
                         <tr>
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $a->jenis }}</td>
@@ -39,15 +48,15 @@
                             <td>
                                 {{-- Tombol Detail --}}
                                 <a href="
-                                #{{-- {{ route('admin.detail_laporan_keuangan', $a->id_transaksi) }} --}}
+                                {{ route('admin.detail_laporan_keuangan', $a->id_transaksi) }}
                                  " 
                                    class="btn btn-sm btn-info" title="Detail">
                                     <i class="fas fa-eye"></i>
                                 </a>
 
                                 {{-- Tombol Edit --}}
-                                <a href="#
-                                {{-- {{ route('admin.edit_laporan_keuangan', $a->id_transaksi) }} --}}
+                                <a href="
+                                {{ route('admin.edit_laporan_keuangan', $a->id_transaksi) }}
                                  " class="btn btn-sm btn-warning text-white" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>

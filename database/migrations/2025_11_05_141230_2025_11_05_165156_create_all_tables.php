@@ -132,7 +132,7 @@ return new class extends Migration
         $table->foreign('id_alsintan')->references('id_alsintan')->on('alsintan')->cascadeOnDelete();
     });
 
-    Schema::create('frekuensi_keuangan', function (Blueprint $table) {
+    Schema::create('laporan_keuangan', function (Blueprint $table) {
         $table->id('id_transaksi');
         $table->double('jumlah');
         $table->string('jenis');
@@ -180,7 +180,7 @@ public function down()
     Schema::dropIfExists('perawatan');
     Schema::dropIfExists('saldo');
     Schema::dropIfExists('pinjaman');
-    Schema::dropIfExists('frekuensi_keuangan');
+    Schema::dropIfExists('laporan_keuangan');
     Schema::dropIfExists('penyusutan');
     Schema::dropIfExists('laporan_upja');
     Schema::dropIfExists('penggunaan_alsintan');

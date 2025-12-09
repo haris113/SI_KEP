@@ -14,7 +14,7 @@ use App\Models\data_alsintan_model;
 use App\Models\perawatan_alsintan_model;
 use App\Models\penggunaan_alsintan_model;
 use App\Models\laporan_upja_model;
-use App\Models\frekuensi_keuangan_model;
+use App\Models\laporan_keuangan_model;
 use App\Models\operator_model;
 
 class admin_controller extends Controller
@@ -200,56 +200,60 @@ class admin_controller extends Controller
         return view('pages.Admin.kegiatan.tambah_kegiatan', $data);
 }
 
- public function frekuensi_keuangan()
+ public function laporan_keuangan()
     {
+        $total_masuk = laporan_keuangan_model::where('jenis', 'uang masuk')->sum('jumlah');
+        $total_keluar = laporan_keuangan_model::where('jenis', 'uang keluar')->sum('jumlah');
+        $saldo = $total_masuk - $total_keluar;
         $data = [
             'judul' => 'DATA LAPORAN KEUANGAN (KAS) KELEMBAGAAN',
             'title' => 'Kas Keuangan | SI-KEP',
-            'page'  => 'frekuensi_keuangan',
-            'frekuensi_keuangan' => frekuensi_keuangan_model::all()
+            'page'  => 'laporan_keuangan',
+            'laporan_keuangan' => laporan_keuangan_model::all(),
+            'saldo' => $saldo
         ];
 
-        return view('pages.Admin.frekuensi_keuangan.frekuensi_keuangan', $data);
+        return view('pages.Admin.laporan_keuangan.laporan_keuangan', $data);
     }
     
     
-    public function detail_frekuensi_keuangan($id)
+    public function detail_laporan_keuangan($id)
     {
-        $frekuensi_keuangan = frekuensi_keuangan_model::findOrFail($id);
+        $laporan_keuangan = laporan_keuangan_model::findOrFail($id);
 
         $data = [
             'judul'  => 'DETAIL LAPORAN KEUANGAN (KAS) KELEMBAGAAN',
             'title'  => 'Detail Kas Keuangan | SI-KEP',
-            'page'   => 'frekuensi_keuangan',
-            'frekuensi_keuangan'=> $frekuensi_keuangan
+            'page'   => 'laporan_keuangan',
+            'laporan_keuangan'=> $laporan_keuangan
         ];
 
-        return view('pages.Admin.frekuensi_keuangan.detail_frekuensi_keuangan', $data);
+        return view('pages.Admin.laporan_keuangan.detail_laporan_keuangan', $data);
     }
-    public function edit_frekuensi_keuangan($id)
+    public function edit_laporan_keuangan($id)  
     {
-        $frekuensi_keuangan = frekuensi_keuangan_model::findOrFail($id);
+        $laporan_keuangan = laporan_keuangan_model::findOrFail($id);
 
         $data = [
             'judul'  => 'EDIT LAPORAN KEUANGAN (KAS) KELEMBAGAAN',
             'title'  => 'Edit Kas Keuangan | SI-KEP',
-            'page'   => 'frekuensi_keuangan',
-            'frekuensi_keuangan'=> $frekuensi_keuangan
+            'page'   => 'laporan_keuangan',
+            'laporan_keuangan'=> $laporan_keuangan
         ];
 
-        return view('pages.Admin.frekuensi_keuangan.edit_frekuensi_keuangan', $data);
+        return view('pages.Admin.laporan_keuangan.edit_laporan_keuangan', $data);
     }
-    public function tambah_frekuensi_keuangan()
+    public function tambah_laporan_keuangan()
     {
-        $frekuensi_keuangan = frekuensi_keuangan_model::all();
+        $laporan_keuangan = laporan_keuangan_model::all();      
 
         $data = [
             'judul'  => 'TAMBAH LAPORAN KEUANGAN (KAS) KELEMBAGAAN',
             'title'  => 'Tambah Kas Keuangan | SI-KEP',
-            'page'   => 'frekuensi_keuangan',
-            'frekuensi_keuangan'=> $frekuensi_keuangan
+            'page'   => 'laporan_keuangan',
+            'laporan_keuangan'=> $laporan_keuangan
         ];
 
-        return view('pages.Admin.frekuensi_keuangan.tambah_frekuensi_keuangan', $data);
+        return view('pages.Admin.laporan_keuangan.tambah_laporan_keuangan', $data);
 }
 }

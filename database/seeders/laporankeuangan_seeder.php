@@ -5,14 +5,14 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class frekuensikeuangan_seeder extends Seeder
+class laporankeuangan_seeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('frekuensi_keuangan')->insert([
+        DB::table('laporan_keuangan')->insert([
             [
-                'jumlah' => 20000000, // 20 JT
-                'jenis' => 'uang masuk',
+                'jumlah' => 2000000000000, // 20 JT
+                'jenis' => 'Uang Masuk',
                 'tanggal' => '2025-11-10',
                 'keterangan' => 'penghasilan Alsintan',
                 'total' => 20000000,
@@ -21,7 +21,7 @@ class frekuensikeuangan_seeder extends Seeder
             ],
             [
                 'jumlah' => 600000000, // 600 JT
-                'jenis' => 'uang keluar',
+                'jenis' => 'Uang Keluar',
                 'tanggal' => '2025-11-12',
                 'keterangan' => 'beli unit baru',
                 'total' => 600000000,
