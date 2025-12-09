@@ -10,32 +10,32 @@
             <div class="col-md-12">
                 <div class="card card-with-nav">
 
-                   <form action="#" method="POST">
+                    <form action="#" method="POST">
                         @csrf
                         <div class="card-body">
 
                             {{-- NAMA --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>Jenis Dana</label>
-                                <input type="text" class="form-control" value="{{ $laporan_keuangan->jenis }}">
+                                <label>Nama Lengkap</label>
+                                <input type="text" class="form-control" value="#">
                             </div>
 
-                            {{-- ALAMAT --}}
+                            {{-- username --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>Jumlah Dana</label>
-                                <input type="text" class="form-control" value="{{ $laporan_keuangan->jumlah }}">
+                                <label>Username</label>
+                                <input type="text" class="form-control" value="#" >
                             </div>
 
-                            {{-- NO HP --}}
+                            {{-- Password --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>Keterangan</label>
-                                <input type="text" class="form-control" value="{{ $laporan_keuangan->keterangan }}">
+                                <label>Password</label>
+                                <input type="text" class="form-control" value="#" >
                             </div>
 
-                            {{-- TANGGAL TRANSAKSI --}}
+                            {{-- Role --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>Tanggal Transaksi</label>
-                                <input type="text" class="form-control" value="{{ $laporan_keuangan->tanggal }}">
+                                <label>Role</label>
+                                <input type="text" class="form-control" value="#" >
                             </div>
 
                             <div class="text-right mt-3 d-flex justify-content-end gap-2">

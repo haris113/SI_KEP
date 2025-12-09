@@ -23,7 +23,7 @@
 
     <!-- Nav Item - Kelola Akun -->
     <li class="nav-item {{ $page === 'Kelola Akun' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('Admin/KelolaAkun') }}">
+        <a class="nav-link" href="{{ url('admin/user') }}">
             <i class="fa-solid fa-user-gear fa-fw"></i>
             <span>Kelola Akun</span>
         </a>

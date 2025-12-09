@@ -16,30 +16,30 @@
 
                             {{-- NAMA --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>Nama Lengkap</label>
-                                <input type="text" class="form-control" value="{{ $anggota->nama }}" readonly>
+                                <label>Jenis Dana</label>
+                                <input type="text" class="form-control" value="{{ $laporan_keuangan->jenis }}" readonly>
                             </div>
 
                             {{-- ALAMAT --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>Alamat</label>
-                                <input type="text" class="form-control" value="{{ $anggota->alamat }}" readonly>
+                                <label>Jumlah Dana</label>
+                                <input type="text" class="form-control" value="{{ $laporan_keuangan->jumlah }}" readonly>
                             </div>
 
                             {{-- NO HP --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>No Handphone</label>
-                                <input type="text" class="form-control" value="{{ $anggota->no_hp }}" readonly>
+                                <label>Keterangan</label>
+                                <input type="text" class="form-control" value="{{ $laporan_keuangan->keterangan }}" readonly>
                             </div>
 
-                            {{-- TANGGAL BERGABUNG --}}
+                            {{-- TANGGAL TRANSAKSI --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>Tanggal Bergabung</label>
-                                <input type="text" class="form-control" value="{{ $anggota->tanggal_bergabung }}" readonly>
+                                <label>Tanggal Transaksi</label>
+                                <input type="text" class="form-control" value="{{ $laporan_keuangan->tanggal }}" readonly>
                             </div>
 
                             <div class="text-right mt-3">
-                                <a href="{{ url('admin/anggota') }}" class="btn btn-danger">Kembali</a>
+                                <a href="{{ url('admin/laporan_keuangan') }}" class="btn btn-danger">Kembali</a>
                             </div>
 
                         </div>

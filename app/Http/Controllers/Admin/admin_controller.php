@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\user_model;
 use App\Models\anggota_model;
 use App\Models\kegiatan_model;
 use App\Models\kelembagaan_model;
@@ -27,6 +28,59 @@ class admin_controller extends Controller
         'role'  => 'Admin',
         ];
         return view('pages.Admin.dashboard_admin',$data);
+    }
+
+        public function user()
+    {
+        $data = [
+            'judul' => 'DATA AKUN KELEMBAGAAN',
+            'title' => 'Akun | SI-KEP',
+            'page'  => 'user',
+            'user' => user_model::all()
+        ];
+
+        return view('pages.Admin.user.user', $data);
+    }
+    
+    
+    public function detail_user($id)
+    {
+        $user = user_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'DETAIL AKUN KELEMBAGAAN',
+            'title'  => 'Detail Akun | SI-KEP',
+            'page'   => 'user',
+            'user'=> $user
+        ];
+
+        return view('pages.Admin.user.detail_user', $data);
+    }
+    public function edit_user($id)
+    {
+        $user = user_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'EDIT AKUN KELEMBAGAAN',
+            'title'  => 'Edit Akun | SI-KEP',
+            'page'   => 'user',
+            'user'=> $user
+        ];
+
+        return view('pages.Admin.user.edit_user', $data);
+    }
+    public function tambah_user()
+    {
+        $user = user_model::all();
+
+        $data = [
+            'judul'  => 'TAMBAH AKUN KELEMBAGAAN',
+            'title'  => 'Tambah Akun | SI-KEP',
+            'page'   => 'user',
+            'user'=> $user
+        ];
+
+        return view('pages.Admin.user.tambah_user', $data);
     }
 
         public function anggota()
