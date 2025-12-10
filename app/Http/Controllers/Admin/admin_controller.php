@@ -30,6 +30,7 @@ class admin_controller extends Controller
         return view('pages.Admin.dashboard_admin',$data);
     }
 
+    // ------------------------------------------------------- CRUD USER ------------------------------------------------------
         public function user()
     {
         $data = [
@@ -83,6 +84,8 @@ class admin_controller extends Controller
         return view('pages.Admin.user.tambah_user', $data);
     }
 
+
+    // ------------------------------------------------------- CRUD ANGGOTA ------------------------------------------------------
         public function anggota()
     {
         $data = [
@@ -135,6 +138,9 @@ class admin_controller extends Controller
 
         return view('pages.Admin.anggota.tambah_anggota', $data);
     }
+
+
+    // ------------------------------------------------------- CRUD ARSIP DOKUMEN ------------------------------------------------------
 
             public function arsip_dokumen()
     {
@@ -189,6 +195,8 @@ class admin_controller extends Controller
         return view('pages.Admin.arsip_dokumen.tambah_arsip_dokumen', $data);
     }
 
+    // ------------------------------------------------------- RU KELEMBAGAAN ------------------------------------------------------
+
     public function kelembagaan()
     {
         $data = [
@@ -200,6 +208,10 @@ class admin_controller extends Controller
 
         return view('pages.Admin.kelembagaan.kelembagaan', $data);
     }
+
+
+   // ------------------------------------------------------- CRUD KEGIATAN ------------------------------------------------------
+
 
     public function kegiatan()
     {
@@ -213,8 +225,7 @@ class admin_controller extends Controller
         return view('pages.Admin.kegiatan.kegiatan', $data);
     }
     
-    
-    public function detail_kegiatan($id)
+     public function detail_kegiatan($id)
     {
         $kegiatan = kegiatan_model::findOrFail($id);
 
@@ -254,7 +265,9 @@ class admin_controller extends Controller
         return view('pages.Admin.kegiatan.tambah_kegiatan', $data);
 }
 
- public function laporan_keuangan()
+    // ------------------------------------------------------- CRUD LAPORAN KEUANGAN ------------------------------------------------------
+
+    public function laporan_keuangan()
     {
         $total_masuk = laporan_keuangan_model::where('jenis', 'uang masuk')->sum('jumlah');
         $total_keluar = laporan_keuangan_model::where('jenis', 'uang keluar')->sum('jumlah');
@@ -309,5 +322,59 @@ class admin_controller extends Controller
         ];
 
         return view('pages.Admin.laporan_keuangan.tambah_laporan_keuangan', $data);
+}
+
+        // ------------------------------------------------------- CRUD PINJAMAN ------------------------------------------------------
+
+    
+    public function pinjaman()
+    {
+        $data = [
+            'judul' => 'DATA PINJAMAN',
+            'title' => 'Pinjaman | SI-KEP',
+            'page'  => 'pinjaman',
+            'pinjaman' => pinjaman_model::all()
+        ];
+
+        return view('pages.Admin.pinjaman.pinjaman', $data);
+    }  
+    public function detail_pinjaman($id)
+    {
+        $pinjaman = pinjaman_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'DETAIL PINJAMAN',
+            'title'  => 'Detail Pinjaman | SI-KEP',
+            'page'   => 'pinjaman',
+            'pinjaman'=> $pinjaman
+        ];
+
+        return view('pages.Admin.pinjaman.detail_pinjaman', $data);
+    }
+    public function edit_pinjaman($id)
+    {
+        $pinjaman = pinjaman_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'EDIT PINJAMAN',
+            'title'  => 'Edit Pinjaman | SI-KEP',                                                       
+            'page'   => 'pinjaman',
+            'pinjaman'=> $pinjaman
+        ];
+
+        return view('pages.Admin.pinjaman.edit_pinjaman', $data);
+    }
+    public function tambah_pinjaman()
+    {
+        $pinjaman = pinjaman_model::all();
+
+        $data = [
+            'judul'  => 'TAMBAH PINJAMAN',          
+            'title'  => 'Tambah Pinjaman | SI-KEP', 
+            'page'   => 'pinjaman',
+            'pinjaman'=> $pinjaman
+        ];
+
+        return view('pages.Admin.pinjaman.tambah_pinjaman', $data);
 }
 }

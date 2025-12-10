@@ -62,7 +62,12 @@ Route::middleware(['verifikasi_role:admin'])->group(function () {
      Route::get('/admin/tambah_laporan_keuangan', [admin_controller::class, 'tambah_laporan_keuangan'])->name('admin.tambah_laporan_keuangan');
      Route::get('/admin/detail_laporan_keuangan/{id}', [admin_controller::class, 'detail_laporan_keuangan'])->name('admin.detail_laporan_keuangan');
      Route::get('/admin/edit_laporan_keuangan/{id}', [admin_controller::class, 'edit_laporan_keuangan'])->name('admin.edit_laporan_keuangan');
-
+     
+     Route::get('/admin/pinjaman', [admin_controller::class, 'pinjaman'])->name('admin.pinjaman');
+     Route::get('/admin/tambah_pinjaman', [admin_controller::class, 'tambah_pinjaman'])->name('admin.tambah_pinjaman');
+     Route::get('/admin/detail_pinjaman/{id}', [admin_controller::class, 'detail_pinjaman'])->name('admin.detail_pinjaman');
+     Route::get('/admin/edit_pinjaman/{id}', [admin_controller::class, 'edit_pinjaman'])->name('admin.edit_pinjaman');
+     
      Route::get('/admin/kelembagaan', [admin_controller::class, 'kelembagaan'])->name('admin.kelembagaan');
 
 
