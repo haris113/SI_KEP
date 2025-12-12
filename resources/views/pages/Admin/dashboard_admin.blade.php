@@ -9,7 +9,7 @@
 
             <!-- Laporan Keuangan -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <a href="#" class="text-decoration-none text-dark">
+                <a href="{{ url('admin/laporan_keuangan') }}" class="text-decoration-none text-dark">
                     <div class="card shadow-sm border-0 py-4 hover-shadow">
                         <div class="card-body">
                             <i class="fa-solid fa-money-bill-wave fa-2x mb-2 text-primary"></i>
@@ -21,7 +21,7 @@
 
             <!-- Penyusutan -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <a href="#" class="text-decoration-none text-dark">
+                <a href="{{ url('admin/penyusutan') }}" class="text-decoration-none text-dark">
                     <div class="card shadow-sm border-0 py-4 hover-shadow">
                         <div class="card-body">
                             <i class="fa-solid fa-chart-line fa-2x mb-2 text-success"></i>
@@ -33,7 +33,7 @@
 
             <!-- Pinjaman -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <a href="#" class="text-decoration-none text-dark">
+                <a href="{{ url('admin/pinjaman') }}" class="text-decoration-none text-dark">
                     <div class="card shadow-sm border-0 py-4 hover-shadow">
                         <div class="card-body">
                             <i class="fa-solid fa-phone fa-2x mb-2 text-info"></i>
@@ -45,7 +45,7 @@
 
             <!-- Laporan UPJA -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <a href="#" class="text-decoration-none text-dark">
+                <a href="{{ url('admin/laporan_upja') }}" class="text-decoration-none text-dark">
                     <div class="card shadow-sm border-0 py-4 hover-shadow">
                         <div class="card-body">
                             <i class="fa-solid fa-building fa-2x mb-2 text-warning"></i>
@@ -57,7 +57,7 @@
 
             <!-- Data Alsintan -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <a href="#" class="text-decoration-none text-dark">
+                <a href="{{ url('admin/alsintan') }}" class="text-decoration-none text-dark">
                     <div class="card shadow-sm border-0 py-4 hover-shadow">
                         <div class="card-body">
                             <i class="fa-solid fa-tractor fa-2x mb-2 text-danger"></i>
@@ -69,7 +69,7 @@
 
             <!-- Perawatan Alsintan -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <a href="#" class="text-decoration-none text-dark">
+                <a href="{{ url('admin/perawatan') }}" class="text-decoration-none text-dark">
                     <div class="card shadow-sm border-0 py-4 hover-shadow">
                         <div class="card-body">
                             <i class="fa-solid fa-screwdriver-wrench fa-2x mb-2 text-secondary"></i>
@@ -81,7 +81,7 @@
 
             <!-- Penggunaan Alsintan -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <a href="#" class="text-decoration-none text-dark">
+                <a href="{{ url('admin/penggunaan_alsintan') }}" class="text-decoration-none text-dark">
                     <div class="card shadow-sm border-0 py-4 hover-shadow">
                         <div class="card-body">
                             <i class="fa-solid fa-industry fa-2x mb-2 text-primary"></i>
@@ -93,7 +93,7 @@
 
             <!-- Operator -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <a href="#" class="text-decoration-none text-dark">
+                <a href="{{ url('admin/operator') }}" class="text-decoration-none text-dark">
                     <div class="card shadow-sm border-0 py-4 hover-shadow">
                         <div class="card-body">
                             <i class="fa-solid fa-user-gear fa-2x mb-2 text-success"></i>

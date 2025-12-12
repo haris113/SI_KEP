@@ -67,7 +67,42 @@ Route::middleware(['verifikasi_role:admin'])->group(function () {
      Route::get('/admin/tambah_pinjaman', [admin_controller::class, 'tambah_pinjaman'])->name('admin.tambah_pinjaman');
      Route::get('/admin/detail_pinjaman/{id}', [admin_controller::class, 'detail_pinjaman'])->name('admin.detail_pinjaman');
      Route::get('/admin/edit_pinjaman/{id}', [admin_controller::class, 'edit_pinjaman'])->name('admin.edit_pinjaman');
+
+     Route::get('/admin/perawatan', [admin_controller::class, 'perawatan'])->name('admin.perawatan');
+     Route::get('/admin/tambah_perawatan', [admin_controller::class, 'tambah_perawatan'])->name('admin.tambah_perawatan');
+     Route::get('/admin/detail_perawatan/{id}', [admin_controller::class, 'detail_perawatan'])->name('admin.detail_perawatan');
+     Route::get('/admin/edit_perawatan/{id}', [admin_controller::class, 'edit_perawatan'])->name('admin.edit_perawatan');
+
+     Route::get('/admin/alsintan', [admin_controller::class, 'alsintan'])->name('admin.alsintan');
+     Route::get('/admin/tambah_alsintan', [admin_controller::class, 'tambah_alsintan'])->name('admin.tambah_alsintan');
+     Route::get('/admin/detail_alsintan/{id}', [admin_controller::class, 'detail_alsintan'])->name('admin.detail_alsintan');
+     Route::get('/admin/edit_alsintan/{id}', [admin_controller::class, 'edit_alsintan'])->name('admin.edit_alsintan');
      
+     Route::get('/admin/penggunaan_alsintan', [admin_controller::class, 'penggunaan_alsintan'])->name('admin.penggunaan_alsintan');
+     Route::get('/admin/tambah_penggunaan_alsintan', [admin_controller::class, 'tambah_penggunaan_alsintan'])->name('admin.tambah_penggunaan_alsintan');
+     Route::get('/admin/detail_penggunaan_alsintan/{id}', [admin_controller::class, 'detail_penggunaan_alsintan'])->name('admin.detail_penggunaan_alsintan');
+     Route::get('/admin/edit_penggunaan_alsintan/{id}', [admin_controller::class, 'edit_penggunaan_alsintan'])->name('admin.edit_penggunaan_alsintan');
+
+     Route::get('/admin/perawatan', [admin_controller::class, 'perawatan'])->name('admin.perawatan');
+     Route::get('/admin/tambah_perawatan', [admin_controller::class, 'tambah_perawatan'])->name('admin.tambah_perawatan');
+     Route::get('/admin/detail_perawatan/{id}', [admin_controller::class, 'detail_perawatan'])->name('admin.detail_perawatan');
+     Route::get('/admin/edit_perawatan/{id}', [admin_controller::class, 'edit_perawatan'])->name('admin.edit_perawatan');
+
+     Route::get('/admin/laporan_upja', [admin_controller::class, 'laporan_upja'])->name('admin.laporan_upja');
+     Route::get('/admin/tambah_laporan_upja', [admin_controller::class, 'tambah_laporan_upja'])->name('admin.tambah_laporan_upja');
+     Route::get('/admin/detail_laporan_upja/{id}', [admin_controller::class, 'detail_laporan_upja'])->name('admin.detail_laporan_upja');
+     Route::get('/admin/edit_laporan_upja/{id}', [admin_controller::class, 'edit_laporan_upja'])->name('admin.edit_laporan_upja');
+
+     Route::get('/admin/penyusutan', [admin_controller::class, 'penyusutan'])->name('admin.penyusutan');
+     Route::get('/admin/tambah_penyusutan', [admin_controller::class, 'tambah_penyusutan'])->name('admin.tambah_penyusutan');
+     Route::get('/admin/detail_penyusutan/{id}', [admin_controller::class, 'detail_penyusutan'])->name('admin.detail_penyusutan');
+     Route::get('/admin/edit_penyusutan/{id}', [admin_controller::class, 'edit_penyusutan'])->name('admin.edit_penyusutan');
+
+     Route::get('/admin/operator', [admin_controller::class, 'operator'])->name('admin.operator');
+     Route::get('/admin/tambah_operator', [admin_controller::class, 'tambah_operator'])->name('admin.tambah_operator');
+     Route::get('/admin/detail_operator/{id}', [admin_controller::class, 'detail_operator'])->name('admin.detail_operator');
+     Route::get('/admin/edit_operator/{id}', [admin_controller::class, 'edit_operator'])->name('admin.edit_operator');
+
      Route::get('/admin/kelembagaan', [admin_controller::class, 'kelembagaan'])->name('admin.kelembagaan');
 
 

@@ -11,8 +11,8 @@ use App\Models\kelembagaan_model;
 use App\Models\arsip_dokumen_model;
 use App\Models\penyusutan_model;
 use App\Models\pinjaman_model;
-use App\Models\data_alsintan_model;
-use App\Models\perawatan_alsintan_model;
+use App\Models\alsintan_model;
+use App\Models\perawatan_model;
 use App\Models\penggunaan_alsintan_model;
 use App\Models\laporan_upja_model;
 use App\Models\laporan_keuangan_model;
@@ -376,5 +376,328 @@ class admin_controller extends Controller
         ];
 
         return view('pages.Admin.pinjaman.tambah_pinjaman', $data);
+}
+
+        // ------------------------------------------------------- CRUD ALSINTAN ------------------------------------------------------
+
+    
+    public function alsintan()
+    {
+        $data = [
+            'judul' => 'DATA ALSINTAN',
+            'title' => 'Alsintan | SI-KEP',
+            'page'  => 'alsintan',
+            'alsintan' => alsintan_model::all()
+        ];
+
+        return view('pages.Admin.alsintan.alsintan', $data);
+    }  
+    public function detail_alsintan($id)
+    {
+        $alsintan = alsintan_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'DETAIL ALSINTAN',
+            'title'  => 'Detail Alsintan | SI-KEP',
+            'page'   => 'alsintan',
+            'alsintan'=> $alsintan
+        ];
+
+        return view('pages.Admin.alsintan.detail_alsintan', $data);     
+    }
+    public function edit_alsintan($id)
+    {
+        $alsintan = alsintan_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'EDIT ALSINTAN',
+            'title'  => 'Edit Alsintan | SI-KEP',                                                       
+            'page'   => 'alsintan',
+            'alsintan'=> $alsintan
+        ];
+
+        return view('pages.Admin.alsintan.edit_alsintan', $data);
+    }
+    public function tambah_alsintan()
+    {
+        $alsintan = alsintan_model::all();
+
+        $data = [
+            'judul'  => 'TAMBAH ALSINTAN',                  
+            'title'  => 'Tambah Alsintan | SI-KEP', 
+            'page'   => 'alsintan',
+            'alsintan'=> $alsintan
+        ];
+
+        return view('pages.Admin.alsintan.tambah_alsintan', $data);
+}
+
+        // ------------------------------------------------------- CRUD OPERATOR ------------------------------------------------------
+
+    
+    public function operator()
+    {
+        $data = [
+            'judul' => 'DATA OPERATOR',
+            'title' => 'Operator | SI-KEP',
+            'page'  => 'operator',
+            'operator' => operator_model::all()
+        ];
+
+        return view('pages.Admin.operator.operator', $data);
+    }  
+    public function detail_operator($id)
+    {
+        $operator = operator_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'DETAIL OPERATOR',
+            'title'  => 'Detail Operator | SI-KEP',
+            'page'   => 'operator',
+            'operator'=> $operator
+        ];
+
+        return view('pages.Admin.operator.detail_operator', $data);
+    }
+    public function edit_operator($id)
+    {
+        $operator = operator_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'EDIT OPERATOR',
+            'title'  => 'Edit Operator | SI-KEP',                                                       
+            'page'   => 'operator',
+            'operator'=> $operator
+        ];
+
+        return view('pages.Admin.operator.edit_operator', $data);
+    }
+    public function tambah_operator()
+    {
+        $operator = operator_model::all();
+
+        $data = [
+            'judul'  => 'TAMBAH OPERATOR',          
+            'title'  => 'Tambah Operator | SI-KEP', 
+            'page'   => 'operator',
+            'operator'=> $operator
+        ];
+
+        return view('pages.Admin.operator.tambah_operator', $data);
+}
+
+        // ------------------------------------------------------- CRUD PENGGUNAAN ALSINTAN ------------------------------------------------------
+
+    
+    public function penggunaan_alsintan()
+    {
+        $data = [
+            'judul' => 'DATA PENGGUNAAN ALSINTAN',
+            'title' => 'Penggunaan Alsintan | SI-KEP',
+            'page'  => 'penggunaan_alsintan',
+            'penggunaan_alsintan' => penggunaan_alsintan_model::all()
+        ];
+
+        return view('pages.Admin.penggunaan_alsintan.penggunaan_alsintan', $data);
+    }  
+    public function detail_penggunaan_alsintan($id)
+    {
+        $penggunaan_alsintan = penggunaan_alsintan_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'DETAIL PENGGUNAAN ALSINTAN',
+            'title'  => 'Detail Penggunaan Alsintan | SI-KEP',
+            'page'   => 'penggunaan_alsintan',
+            'penggunaan_alsintan'=> $penggunaan_alsintan
+        ];
+
+        return view('pages.Admin.penggunaan_alsintan.detail_penggunaan_alsintan', $data);
+    }
+    public function edit_penggunaan_alsintan($id)
+    {
+        $penggunaan_alsintan = penggunaan_alsintan_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'EDIT PENGGUNAAN ALSINTAN',
+            'title'  => 'Edit Penggunaan Alsintan | SI-KEP',                                                       
+            'page'   => 'penggunaan_alsintan',
+            'penggunaan_alsintan'=> $penggunaan_alsintan
+        ];
+
+        return view('pages.Admin.penggunaan_alsintan.edit_penggunaan_alsintan', $data);
+    }
+    public function tambah_penggunaan_alsintan()
+    {
+        $penggunaan_alsintan = penggunaan_alsintan_model::all();
+
+        $data = [
+            'judul'  => 'TAMBAH PENGGUNAAN ALSINTAN',          
+            'title'  => 'Tambah Penggunaan Alsintan | SI-KEP', 
+            'page'   => 'penggunaan_alsintan',
+            'penggunaan_alsintan'=> $penggunaan_alsintan
+        ];
+
+        return view('pages.Admin.penggunaan_alsintan.tambah_penggunaan_alsintan', $data);
+}
+        // ------------------------------------------------------- CRUD PERAWATAN ------------------------------------------------------
+
+    
+    public function perawatan()
+    {
+        $data = [
+            'judul' => 'DATA PERAWATAN ALSINTAN',
+            'title' => 'Perawatan Alsintan | SI-KEP',
+            'page'  => 'perawatan',
+            'perawatan' => perawatan_model::all()
+        ];
+
+        return view('pages.Admin.perawatan.perawatan', $data);
+    }  
+    public function detail_perawatan($id)
+    {
+        $perawatan = perawatan_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'DETAIL PERAWATAN ALSINTAN',
+            'title'  => 'Detail Perawatan Alsintan | SI-KEP',
+            'page'   => 'perawatan',
+            'perawatan'=> $perawatan
+        ];
+
+        return view('pages.Admin.perawatan.detail_perawatan', $data);
+    }
+    public function edit_perawatan($id)
+    {
+        $perawatan = perawatan_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'EDIT PERAWATAN ALSINTAN',
+            'title'  => 'Edit Perawatan Alsintan | SI-KEP',                                                       
+            'page'   => 'perawatan',
+            'perawatan'=> $perawatan
+        ];
+
+        return view('pages.Admin.perawatan.edit_perawatan', $data);
+    }
+    public function tambah_perawatan()
+    {
+        $perawatan = perawatan_model::all();
+
+        $data = [
+            'judul'  => 'TAMBAH PERAWATAN ALSINTAN',          
+            'title'  => 'Tambah Perawatan Alsintan | SI-KEP', 
+            'page'   => 'perawatan',
+            'perawatan'=> $perawatan
+        ];
+
+        return view('pages.Admin.perawatan.tambah_perawatan', $data);
+}
+
+        // ------------------------------------------------------- CRUD PENYUSUTAN ------------------------------------------------------
+
+    
+    public function penyusutan()
+    {
+        $data = [
+            'judul' => 'DATA PENYUSUTAN ALSINTAN',
+            'title' => 'Penyusutan Alsintan | SI-KEP',
+            'page'  => 'penyusutan',
+            'penyusutan' => penyusutan_model::all()
+        ];
+
+        return view('pages.Admin.penyusutan.penyusutan', $data);
+    }  
+    public function detail_penyusutan($id)
+    {
+        $penyusutan = penyusutan_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'DETAIL PENYUSUTAN ALSINTAN',
+            'title'  => 'Detail Penyusutan Alsintan | SI-KEP',
+            'page'   => 'penyusutan',
+            'penyusutan'=> $penyusutan
+        ];
+
+        return view('pages.Admin.penyusutan.detail_penyusutan', $data);
+    }
+    public function edit_penyusutan($id)
+    {
+        $penyusutan = penyusutan_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'EDIT PENYUSUTAN ALSINTAN', 
+            'title'  => 'Edit Penyusutan Alsintan | SI-KEP',                                                       
+            'page'   => 'penyusutan',
+            'penyusutan'=> $penyusutan
+        ];
+
+        return view('pages.Admin.penyusutan.edit_penyusutan', $data); 
+    }
+    public function tambah_penyusutan()
+    {
+        $penyusutan = penyusutan_model::all();
+
+        $data = [
+            'judul'  => 'TAMBAH PENYUSUTAN ALSINTAN',          
+            'title'  => 'Tambah Penyusutan Alsintan | SI-KEP', 
+            'page'   => 'penyusutan',
+            'penyusutan'=> $penyusutan
+        ];
+
+        return view('pages.Admin.penyusutan.tambah_penyusutan', $data);
+}
+
+        // ------------------------------------------------------- CRUD LAPORAN UPJA ------------------------------------------------------
+
+    
+    public function laporan_upja()
+    {
+        $data = [
+            'judul' => 'DATA LAPORAN UPJA',
+            'title' => 'Laporan UPJA | SI-KEP',
+            'page'  => 'laporan_upja',
+            'laporan_upja' => laporan_upja_model::all()
+        ];
+
+        return view('pages.Admin.laporan_upja.laporan_upja', $data);
+    }  
+    public function detail_laporan_upja($id)
+    {
+        $laporan_upja = laporan_upja_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'DETAIL LAPORAN UPJA',
+            'title'  => 'Detail Laporan UPJA | SI-KEP',
+            'page'   => 'laporan_upja',
+            'laporan_upja'=> $laporan_upja
+        ];
+
+        return view('pages.Admin.laporan_upja.detail_laporan_upja', $data);
+    }
+    public function edit_laporan_upja($id)
+    {
+        $laporan_upja = laporan_upja_model::findOrFail($id);
+
+        $data = [
+            'judul'  => 'EDIT LAPORAN UPJA',
+            'title'  => 'Edit Laporan UPJA | SI-KEP',                                                       
+            'page'   => 'laporan_upja',
+            'laporan_upja'=> $laporan_upja
+        ];
+
+        return view('pages.Admin.laporan_upja.edit_laporan_upja', $data);
+    }
+    public function tambah_laporan_upja()  
+    {
+        $laporan_upja = laporan_upja_model::all();
+
+        $data = [
+            'judul'  => 'TAMBAH LAPORAN UPJA',          
+            'title'  => 'Tambah Laporan UPJA | SI-KEP', 
+            'page'   => 'laporan_upja',
+            'laporan_upja'=> $laporan_upja
+        ];
+
+        return view('pages.Admin.laporan_upja.tambah_laporan_upja', $data);
 }
 }
