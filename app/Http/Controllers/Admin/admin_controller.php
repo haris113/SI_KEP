@@ -548,50 +548,50 @@ class admin_controller extends Controller
             'judul' => 'DATA PERAWATAN ALSINTAN',
             'title' => 'Perawatan Alsintan | SI-KEP',
             'page'  => 'perawatan',
-            'perawatan' => perawatan_model::all()
+            'perawatan' => perawatan_model::with('alsintan')->get()
         ];
 
         return view('pages.Admin.perawatan.perawatan', $data);
     }  
-    public function detail_perawatan($id)
-    {
-        $perawatan = perawatan_model::findOrFail($id);
+    public function detail_perawatan($id_perawatan)
+{
+    $perawatan = perawatan_model::with('alsintan')->findOrFail($id_perawatan);
 
-        $data = [
-            'judul'  => 'DETAIL PERAWATAN ALSINTAN',
-            'title'  => 'Detail Perawatan Alsintan | SI-KEP',
-            'page'   => 'perawatan',
-            'perawatan'=> $perawatan
-        ];
+    $data = [
+        'judul'     => 'DETAIL PERAWATAN ALSINTAN',
+        'title'     => 'Detail Perawatan Alsintan | SI-KEP',
+        'page'      => 'Perawatan Alsintan',
+        'perawatan' => $perawatan
+    ];
 
-        return view('pages.Admin.perawatan.detail_perawatan', $data);
-    }
-    public function edit_perawatan($id)
-    {
-        $perawatan = perawatan_model::findOrFail($id);
-
-        $data = [
-            'judul'  => 'EDIT PERAWATAN ALSINTAN',
-            'title'  => 'Edit Perawatan Alsintan | SI-KEP',                                                       
-            'page'   => 'perawatan',
-            'perawatan'=> $perawatan
-        ];
-
-        return view('pages.Admin.perawatan.edit_perawatan', $data);
-    }
-    public function tambah_perawatan()
-    {
-        $perawatan = perawatan_model::all();
-
-        $data = [
-            'judul'  => 'TAMBAH PERAWATAN ALSINTAN',          
-            'title'  => 'Tambah Perawatan Alsintan | SI-KEP', 
-            'page'   => 'perawatan',
-            'perawatan'=> $perawatan
-        ];
-
-        return view('pages.Admin.perawatan.tambah_perawatan', $data);
+    return view('pages.Admin.perawatan.detail_perawatan', $data);
 }
+
+   public function edit_perawatan($id_perawatan)
+{
+    $data = [
+        'judul'     => 'EDIT PERAWATAN ALSINTAN',
+        'title'     => 'Edit Perawatan Alsintan | SI-KEP',
+        'page'      => 'Perawatan Alsintan',
+        'perawatan' => perawatan_model::findOrFail($id_perawatan),
+        'alsintan'  => alsintan_model::all()
+    ];
+
+    return view('pages.Admin.perawatan.edit_perawatan', $data);
+}
+
+   public function tambah_perawatan()
+{
+    $data = [
+        'judul'    => 'TAMBAH PERAWATAN ALSINTAN',
+        'title'    => 'Tambah Perawatan Alsintan | SI-KEP',
+        'page'     => 'Perawatan Alsintan',
+        'alsintan' => alsintan_model::all()
+    ];
+
+    return view('pages.Admin.perawatan.tambah_perawatan', $data);
+}
+
 
         // ------------------------------------------------------- CRUD PENYUSUTAN ------------------------------------------------------
 
