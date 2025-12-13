@@ -32,12 +32,12 @@
                                 <input type="text" class="form-control" value="{{ $alsintan->tahun_perolehan }}">
                             </div>
 
-                            {{-- STATUS --}}
+                            {{-- Kondisi --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>Status Alat Mesin Pertanian</label>
-                                <select name="status_alsintan" class="form-control">
-                                    <option value="Baik" {{ $alsintan->status_alsintan == 'Baik' ? 'selected' : '' }}>Baik</option>
-                                    <option value="Rusak" {{ $alsintan->status_alsintan == 'Rusak' ? 'selected' : '' }}>Rusak</option>
+                                <label>Kondisi Alat Mesin Pertanian</label>
+                                <select name="kondisi" class="form-control">
+                                    <option value="Baik" {{ $alsintan->kondisi == 'Baik' ? 'selected' : '' }}>Baik</option>
+                                    <option value="Rusak" {{ $alsintan->kondisi == 'Rusak' ? 'selected' : '' }}>Rusak</option>
                                 </select>
                             </div>
 

@@ -42,8 +42,8 @@
                             <td>{{ $a->jenis_alat }}</td>
                             <td>{{ $a->sumber_perolehan }}</td>
                             <td>{{ $a->tanggal_perolehan ?? '-' }}</td>
-                            <?php $status = $a->status;
-                                if ($status == "Baik") {
+                            <?php $kondisi = $a->kondisi;
+                                if ($kondisi == "Baik") {
                                 $buttonClass = "btn-success";
                                 $buttonText = "Baik";
                                 } else {

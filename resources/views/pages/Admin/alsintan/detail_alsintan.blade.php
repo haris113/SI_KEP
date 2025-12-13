@@ -14,33 +14,33 @@
                         @csrf
                         <div class="card-body">
 
-{{-- NAMA --}}
+ {{-- NAMA --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>Nama Peminjam</label>
-                                <input type="text" class="form-control" value="{{ $pinjaman->id_anggota }}" readonly>
+                                <label>Nama Alat Mesin Pertanian</label>
+                                <input type="text" class="form-control" value="{{ $alsintan->nama_alat }}" readonly>
                             </div>
 
                             {{-- JUMLAH PINJAMAN --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>Jumlah Pinjaman</label>
-                                <input type="text" class="form-control" value="{{ $pinjaman->jumlah }}" readonly>
+                                <label>Jenis Alat Mesin Pertanian</label>
+                                <input type="text" class="form-control" value="{{ $alsintan->jenis_alat }}" readonly>
                             </div>
 
                             {{-- KETERANGAN --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>Keterangan</label>
-                                <input type="text" class="form-control" value="{{ $pinjaman->keterangan }}" readonly>
+                                <label>Tahun Perolehan</label>
+                                <input type="text" class="form-control" value="{{ $alsintan->tahun_perolehan }}" readonly>
                             </div>
 
-                            {{-- STATUS --}}
+                            {{-- KONDISI --}}
                             <div class="form-group form-group-default mt-3">
-                                <label>Status</label>
-                                <input type="text" class="form-control" value="{{ $pinjaman->status }}" readonly>
+                                <label>Kondisi Alat Mesin Pertanian</label>
+                                <input type="text" class="form-control" value="{{ $alsintan->kondisi }}" readonly>
                             </div>
 
 
                             <div class="text-right mt-3">
-                                <a href="{{ url('admin/laporan_keuangan') }}" class="btn btn-danger">Kembali</a>
+                                <a href="{{ url('admin/alsintan') }}" class="btn btn-danger">Kembali</a>
                             </div>
 
                         </div>
