@@ -87,10 +87,12 @@
         <div id="collapseUpja" class="collapse {{ in_array($page, ['Data Alsintan', 'Perawatan Alsintan', 'Penggunaan Alsintan', 'Laporan UPJA', 'Operator']) ? 'show' : '' }}" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item {{ $page === 'Data Alsintan' ? 'active' : '' }}" href="{{ url('admin/alsintan') }}">Data Alsintan</a>
+                <a class="collapse-item {{ $page === 'Operator' ? 'active' : '' }}" href="{{ url('admin/operator') }}">Operator</a>
                 <a class="collapse-item {{ $page === 'Perawatan Alsintan' ? 'active' : '' }}" href="{{ url('admin/perawatan_alsintan') }}">Perawatan Alsintan</a>
                 <a class="collapse-item {{ $page === 'Penggunaan Alsintan' ? 'active' : '' }}" href="{{ url('admin/penggunaan_alsintan') }}">Penggunaan Alsintan</a>
+                <a class="collapse-item {{ $page === 'Penyusutan' ? 'active' : '' }}" href="{{ url('admin/penyusutan') }}">Penyusutan Alsintan</a>
                 <a class="collapse-item {{ $page === 'Laporan UPJA' ? 'active' : '' }}" href="{{ url('admin/laporan_upja') }}">Laporan UPJA</a>
-                <a class="collapse-item {{ $page === 'Operator' ? 'active' : '' }}" href="{{ url('admin/operator') }}">Operator</a>
+                
             </div>
         </div>
     </li>
