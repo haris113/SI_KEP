@@ -595,57 +595,93 @@ class admin_controller extends Controller
 
         // ------------------------------------------------------- CRUD PENYUSUTAN ------------------------------------------------------
 
-    
-    public function penyusutan()
+        public function penyusutan()
     {
         $data = [
             'judul' => 'DATA PENYUSUTAN ALSINTAN',
             'title' => 'Penyusutan Alsintan | SI-KEP',
             'page'  => 'penyusutan',
-            'penyusutan' => penyusutan_model::all()
+            'penyusutan' => penyusutan_model::with('alsintan')->get()
         ];
 
         return view('pages.Admin.penyusutan.penyusutan', $data);
-    }  
+    }
+
+    // ===================== DETAIL =====================
     public function detail_penyusutan($id)
     {
-        $penyusutan = penyusutan_model::findOrFail($id);
-
         $data = [
-            'judul'  => 'DETAIL PENYUSUTAN ALSINTAN',
-            'title'  => 'Detail Penyusutan Alsintan | SI-KEP',
-            'page'   => 'penyusutan',
-            'penyusutan'=> $penyusutan
+            'judul' => 'DETAIL PENYUSUTAN ALSINTAN',
+            'title' => 'Detail Penyusutan | SI-KEP',
+            'page'  => 'penyusutan',
+            'penyusutan' => penyusutan_model::with('alsintan')->findOrFail($id)
         ];
 
         return view('pages.Admin.penyusutan.detail_penyusutan', $data);
     }
-    public function edit_penyusutan($id)
-    {
-        $penyusutan = penyusutan_model::findOrFail($id);
 
-        $data = [
-            'judul'  => 'EDIT PENYUSUTAN ALSINTAN', 
-            'title'  => 'Edit Penyusutan Alsintan | SI-KEP',                                                       
-            'page'   => 'penyusutan',
-            'penyusutan'=> $penyusutan
-        ];
-
-        return view('pages.Admin.penyusutan.edit_penyusutan', $data); 
-    }
+    // ===================== TAMBAH =====================
     public function tambah_penyusutan()
     {
-        $penyusutan = penyusutan_model::all();
-
         $data = [
-            'judul'  => 'TAMBAH PENYUSUTAN ALSINTAN',          
-            'title'  => 'Tambah Penyusutan Alsintan | SI-KEP', 
-            'page'   => 'penyusutan',
-            'penyusutan'=> $penyusutan
+            'judul' => 'TAMBAH PENYUSUTAN ALSINTAN',
+            'title' => 'Tambah Penyusutan | SI-KEP',
+            'page'  => 'penyusutan',
+            'alsintan' => alsintan_model::all()
         ];
 
         return view('pages.Admin.penyusutan.tambah_penyusutan', $data);
-}
+    }
+
+    public function store_penyusutan(Request $request)
+    {
+        $request->validate([
+            'id_alsintan' => 'required',
+            'tahun' => 'required',
+            'nilai_perolehan' => 'required|numeric',
+            'nilai_penyusutan' => 'required|numeric',
+            'frekuensi' => 'required|numeric'
+        ]);
+
+        penyusutan_model::create($request->all());
+
+        return redirect('admin/penyusutan')
+            ->with('success', 'Data penyusutan berhasil ditambahkan');
+    }
+
+    // ===================== EDIT =====================
+    public function edit_penyusutan($id)
+    {
+        $data = [
+            'judul' => 'EDIT PENYUSUTAN ALSINTAN',
+            'title' => 'Edit Penyusutan | SI-KEP',
+            'page'  => 'penyusutan',
+            'penyusutan' => penyusutan_model::findOrFail($id),
+            'alsintan' => alsintan_model::all()
+        ];
+
+        return view('pages.Admin.penyusutan.edit_penyusutan', $data);
+    }
+
+    public function update_penyusutan(Request $request, $id)
+    {
+        $penyusutan = penyusutan_model::findOrFail($id);
+
+        $penyusutan->update($request->all());
+
+        return redirect('admin/penyusutan')
+            ->with('success', 'Data penyusutan berhasil diperbarui');
+    }
+
+    // ===================== HAPUS =====================
+    public function hapus_penyusutan($id)
+    {
+        penyusutan_model::findOrFail($id)->delete();
+
+        return redirect('admin/penyusutan')
+            ->with('success', 'Data penyusutan berhasil dihapus');
+    }
+
 
         // ------------------------------------------------------- CRUD LAPORAN UPJA ------------------------------------------------------
 
