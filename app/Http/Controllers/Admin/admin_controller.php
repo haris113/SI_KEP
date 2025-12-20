@@ -687,42 +687,57 @@ class admin_controller extends Controller
 
     
     public function laporan_upja()
-    {
-        $data = [
-            'judul' => 'DATA LAPORAN UPJA',
-            'title' => 'Laporan UPJA | SI-KEP',
-            'page'  => 'laporan_upja',
-            'laporan_upja' => laporan_upja_model::all()
-        ];
+{
+    $data = [
+        'judul' => 'DATA LAPORAN UPJA',
+        'title' => 'Laporan UPJA | SI-KEP',
+        'page'  => 'Laporan UPJA',
+        'laporan' => laporan_upja_model::with('user')->get()
+    ];
 
-        return view('pages.Admin.laporan_upja.laporan_upja', $data);
-    }  
+    return view('pages.Admin.laporan_upja.laporan_upja', $data);
+}
+
     public function detail_laporan_upja($id)
-    {
-        $laporan_upja = laporan_upja_model::findOrFail($id);
+{
+    $data = [
+        'judul' => 'DETAIL LAPORAN UPJA',
+        'title' => 'Detail Laporan UPJA | SI-KEP',
+        'page'  => 'Laporan UPJA',
+        'laporan' => laporan_upja_model::with('user')->findOrFail($id)
+    ];
 
-        $data = [
-            'judul'  => 'DETAIL LAPORAN UPJA',
-            'title'  => 'Detail Laporan UPJA | SI-KEP',
-            'page'   => 'laporan_upja',
-            'laporan_upja'=> $laporan_upja
-        ];
+    return view('pages.Admin.laporan_upja.detail_laporan_upja', $data);
+}
 
-        return view('pages.Admin.laporan_upja.detail_laporan_upja', $data);
-    }
     public function edit_laporan_upja($id)
-    {
-        $laporan_upja = laporan_upja_model::findOrFail($id);
+{
+    $data = [
+        'judul' => 'EDIT LAPORAN UPJA',
+        'title' => 'Edit Laporan UPJA | SI-KEP',
+        'page'  => 'Laporan UPJA',
+        'laporan' => laporan_upja_model::findOrFail($id)
+    ];
+    
 
-        $data = [
-            'judul'  => 'EDIT LAPORAN UPJA',
-            'title'  => 'Edit Laporan UPJA | SI-KEP',                                                       
-            'page'   => 'laporan_upja',
-            'laporan_upja'=> $laporan_upja
-        ];
+    return view('pages.Admin.laporan_upja.edit_laporan_upja', $data);
+}
+public function update_laporan_upja(Request $request, $id)
+{
+    $laporan = laporan_upja_model::findOrFail($id);
 
-        return view('pages.Admin.laporan_upja.edit_laporan_upja', $data);
-    }
+    $laporan->update([
+        'periode' => $request->periode,
+        'tanggal_laporan' => $request->tanggal_laporan,
+        'total_pendapatan' => $request->total_pendapatan,
+        'total_pengeluaran' => $request->total_pengeluaran,
+    ]);
+
+    return redirect()->route('admin.laporan_upja')
+        ->with('success', 'Laporan UPJA berhasil diperbarui');
+}
+
+
     public function tambah_laporan_upja()  
     {
         $laporan_upja = laporan_upja_model::all();
@@ -736,4 +751,33 @@ class admin_controller extends Controller
 
         return view('pages.Admin.laporan_upja.tambah_laporan_upja', $data);
 }
+public function store_laporan_upja(Request $request)
+{
+    $request->validate([
+        'periode' => 'required',
+        'tanggal_laporan' => 'required|date',
+        'total_pendapatan' => 'required|numeric',
+        'total_pengeluaran' => 'required|numeric',
+    ]);
+
+    laporan_upja_model::create([
+        'periode' => $request->periode,
+        'tanggal_laporan' => $request->tanggal_laporan,
+        'total_pendapatan' => $request->total_pendapatan,
+        'total_pengeluaran' => $request->total_pengeluaran,
+        'dibuat_oleh' => Auth::id()
+    ]);
+
+    return redirect()->route('admin.laporan_upja')
+        ->with('success', 'Laporan UPJA berhasil ditambahkan');
+}
+
+public function hapus_laporan_upja($id)
+{
+    laporan_upja_model::findOrFail($id)->delete();
+
+    return redirect()->route('admin.laporan_upja')
+        ->with('success', 'Laporan UPJA berhasil dihapus');
+}
+
 }

@@ -134,8 +134,20 @@ Route::middleware(['verifikasi_role:admin'])->group(function () {
      Route::get('/admin/detail_operator/{id}', [admin_controller::class, 'detail_operator'])->name('admin.detail_operator');
      Route::get('/admin/edit_operator/{id}', [admin_controller::class, 'edit_operator'])->name('admin.edit_operator');
 
+
+// ===================== Kelembagaan =====================
+     
      Route::get('/admin/kelembagaan', [admin_controller::class, 'kelembagaan'])->name('admin.kelembagaan');
 
+// ===================== LAPORAN UPJA =====================
+
+     Route::get('/admin/laporan_upja', [admin_controller::class, 'laporan_upja'])->name('admin.laporan_upja');
+     Route::get('/admin/tambah_laporan_upja', [admin_controller::class, 'tambah_laporan_upja'])->name('admin.tambah_laporan_upja');
+     Route::post('/admin/laporan_upja', [admin_controller::class, 'laporan_upja'])->name('admin.laporan_upja');
+     Route::get('/admin/detail_laporan_upja/{id}', [admin_controller::class, 'detail_laporan_upja'])->name('admin.detail_laporan_upja');
+     Route::get('/admin/edit_laporan_upja/{id}', [admin_controller::class, 'edit_laporan_upja'])->name('admin.edit_laporan_upja');
+     Route::put('/admin/update_laporan_upja/{id}', [admin_controller::class, 'update_laporan_upja'])->name('admin.update_laporan_upja');
+     Route::get('/admin/hapus_laporan_upja/{id}', [admin_controller::class, 'hapus_laporan_upja'])->name('admin.hapus_laporan_upja');
 
 });
 
