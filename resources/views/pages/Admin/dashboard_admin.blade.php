@@ -93,11 +93,11 @@
 
             <!-- Operator -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <a href="{{ url('admin/operator') }}" class="text-decoration-none text-dark">
+                <a href="{{ url('admin/anggota') }}" class="text-decoration-none text-dark">
                     <div class="card shadow-sm border-0 py-4 hover-shadow">
                         <div class="card-body">
                             <i class="fa-solid fa-user-gear fa-2x mb-2 text-success"></i>
-                            <h6 class="font-weight-bold mb-0">Operator</h6>
+                            <h6 class="font-weight-bold mb-0">Anggota</h6>
                         </div>
                     </div>
                 </a>

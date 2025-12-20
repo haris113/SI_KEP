@@ -10,7 +10,7 @@
             <div class="col-md-12">
                 <div class="card card-with-nav">
 
-                   <form action="{{ route('admin.edit_laporan_upja', $laporan->id_laporan) }}" method="POST">
+                   <form action="{{ route('admin.update_laporan_upja', $laporan->id_laporan) }}" method="POST">
                    @csrf
                         <div class="card-body">
 

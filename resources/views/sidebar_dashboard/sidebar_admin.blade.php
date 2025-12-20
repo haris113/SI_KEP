@@ -77,17 +77,16 @@
     </li>
 
     <!-- Nav Item - Divisi UPJA -->
-    <li class="nav-item {{ in_array($page, ['Data Alsintan', 'Perawatan Alsintan', 'Penggunaan Alsintan', 'Laporan UPJA', 'Operator']) ? 'active' : '' }}">
+    <li class="nav-item {{ in_array($page, ['Data Alsintan', 'Perawatan Alsintan', 'Penggunaan Alsintan', 'Laporan UPJA']) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUpja"
-            aria-expanded="{{ in_array($page, ['Data Alsintan', 'Perawatan Alsintan', 'Penggunaan Alsintan', 'Laporan UPJA', 'Operator']) ? 'true' : 'false' }}"
+            aria-expanded="{{ in_array($page, ['Data Alsintan', 'Perawatan Alsintan', 'Penggunaan Alsintan', 'Laporan UPJA']) ? 'true' : 'false' }}"
             aria-controls="collapseUpja">
             <i class="fa-solid fa-tractor fa-fw"></i>
             <span>Divisi UPJA</span>
         </a>
-        <div id="collapseUpja" class="collapse {{ in_array($page, ['Data Alsintan', 'Perawatan Alsintan', 'Penggunaan Alsintan', 'Laporan UPJA', 'Operator']) ? 'show' : '' }}" data-parent="#accordionSidebar">
+        <div id="collapseUpja" class="collapse {{ in_array($page, ['Data Alsintan', 'Perawatan Alsintan', 'Penggunaan Alsintan', 'Laporan UPJA']) ? 'show' : '' }}" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item {{ $page === 'Data Alsintan' ? 'active' : '' }}" href="{{ url('admin/alsintan') }}">Data Alsintan</a>
-                <a class="collapse-item {{ $page === 'Operator' ? 'active' : '' }}" href="{{ url('admin/operator') }}">Operator</a>
                 <a class="collapse-item {{ $page === 'Perawatan Alsintan' ? 'active' : '' }}" href="{{ url('admin/perawatan') }}">Perawatan Alsintan</a>
                 <a class="collapse-item {{ $page === 'Penggunaan Alsintan' ? 'active' : '' }}" href="{{ url('admin/penggunaan_alsintan') }}">Penggunaan Alsintan</a>
                 <a class="collapse-item {{ $page === 'Penyusutan' ? 'active' : '' }}" href="{{ url('admin/penyusutan') }}">Penyusutan Alsintan</a>

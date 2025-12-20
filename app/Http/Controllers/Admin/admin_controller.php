@@ -432,113 +432,6 @@ class admin_controller extends Controller
         return view('pages.Admin.alsintan.tambah_alsintan', $data);
 }
 
-        // ------------------------------------------------------- CRUD OPERATOR ------------------------------------------------------
-
-    
-    public function operator()
-    {
-        $data = [
-            'judul' => 'DATA OPERATOR',
-            'title' => 'Operator | SI-KEP',
-            'page'  => 'operator',
-            'operator' => operator_model::all()
-        ];
-
-        return view('pages.Admin.operator.operator', $data);
-    }  
-    public function detail_operator($id)
-    {
-        $operator = operator_model::findOrFail($id);
-
-        $data = [
-            'judul'  => 'DETAIL OPERATOR',
-            'title'  => 'Detail Operator | SI-KEP',
-            'page'   => 'operator',
-            'operator'=> $operator
-        ];
-
-        return view('pages.Admin.operator.detail_operator', $data);
-    }
-    public function edit_operator($id)
-    {
-        $operator = operator_model::findOrFail($id);
-
-        $data = [
-            'judul'  => 'EDIT OPERATOR',
-            'title'  => 'Edit Operator | SI-KEP',                                                       
-            'page'   => 'operator',
-            'operator'=> $operator
-        ];
-
-        return view('pages.Admin.operator.edit_operator', $data);
-    }
-    public function tambah_operator()
-    {
-        $operator = operator_model::all();
-
-        $data = [
-            'judul'  => 'TAMBAH OPERATOR',          
-            'title'  => 'Tambah Operator | SI-KEP', 
-            'page'   => 'operator',
-            'operator'=> $operator
-        ];
-
-        return view('pages.Admin.operator.tambah_operator', $data);
-}
-
-        // ------------------------------------------------------- CRUD PENGGUNAAN ALSINTAN ------------------------------------------------------
-
-    
-    public function penggunaan_alsintan()
-    {
-        $data = [
-            'judul' => 'DATA PENGGUNAAN ALSINTAN',
-            'title' => 'Penggunaan Alsintan | SI-KEP',
-            'page'  => 'penggunaan_alsintan',
-            'penggunaan_alsintan' => penggunaan_alsintan_model::all()
-        ];
-
-        return view('pages.Admin.penggunaan_alsintan.penggunaan_alsintan', $data);
-    }  
-    public function detail_penggunaan_alsintan($id)
-    {
-        $penggunaan_alsintan = penggunaan_alsintan_model::findOrFail($id);
-
-        $data = [
-            'judul'  => 'DETAIL PENGGUNAAN ALSINTAN',
-            'title'  => 'Detail Penggunaan Alsintan | SI-KEP',
-            'page'   => 'penggunaan_alsintan',
-            'penggunaan_alsintan'=> $penggunaan_alsintan
-        ];
-
-        return view('pages.Admin.penggunaan_alsintan.detail_penggunaan_alsintan', $data);
-    }
-    public function edit_penggunaan_alsintan($id)
-    {
-        $penggunaan_alsintan = penggunaan_alsintan_model::findOrFail($id);
-
-        $data = [
-            'judul'  => 'EDIT PENGGUNAAN ALSINTAN',
-            'title'  => 'Edit Penggunaan Alsintan | SI-KEP',                                                       
-            'page'   => 'penggunaan_alsintan',
-            'penggunaan_alsintan'=> $penggunaan_alsintan
-        ];
-
-        return view('pages.Admin.penggunaan_alsintan.edit_penggunaan_alsintan', $data);
-    }
-    public function tambah_penggunaan_alsintan()
-    {
-        $penggunaan_alsintan = penggunaan_alsintan_model::all();
-
-        $data = [
-            'judul'  => 'TAMBAH PENGGUNAAN ALSINTAN',          
-            'title'  => 'Tambah Penggunaan Alsintan | SI-KEP', 
-            'page'   => 'penggunaan_alsintan',
-            'penggunaan_alsintan'=> $penggunaan_alsintan
-        ];
-
-        return view('pages.Admin.penggunaan_alsintan.tambah_penggunaan_alsintan', $data);
-}
         // ------------------------------------------------------- CRUD PERAWATAN ------------------------------------------------------
 
     
@@ -778,6 +671,83 @@ public function hapus_laporan_upja($id)
 
     return redirect()->route('admin.laporan_upja')
         ->with('success', 'Laporan UPJA berhasil dihapus');
+}
+
+ // ------------------------------------------------------- CRUD PENGGUNAAN ALSINTAN ------------------------------------------------------
+public function penggunaan_alsintan()
+{
+    $data = [
+        'judul' => 'DATA PENGGUNAAN ALSINTAN',
+        'title' => 'Penggunaan Alsintan | SI-KEP',
+        'page'  => 'Penggunaan Alsintan',
+        'penggunaan' => penggunaan_alsintan_model::with(['alsintan','anggota'])->get()
+    ];
+
+    return view('pages.Admin.penggunaan_alsintan.penggunaan_alsintan', $data);
+}
+
+public function tambah_penggunaan_alsintan()
+{
+    $data = [
+        'judul' => 'TAMBAH PENGGUNAAN ALSINTAN',
+        'title' => 'Tambah Penggunaan Alsintan | SI-KEP',
+        'page'  => 'Penggunaan Alsintan',
+        'alsintan' => alsintan_model::all(),
+        'anggota' => anggota_model::all()
+    ];
+
+    return view('pages.Admin.penggunaan_alsintan.tambah_penggunaan_alsintan', $data);
+}
+
+public function create_penggunaan_alsintan(Request $request)
+{
+    penggunaan_alsintan_model::create($request->all());
+
+    return redirect()->route('admin.penggunaan_alsintan')
+        ->with('success','Data penggunaan berhasil ditambahkan');
+}
+
+public function detail_penggunaan_alsintan($id)
+{
+    $data = [
+        'judul' => 'DETAIL PENGGUNAAN ALSINTAN',
+        'title' => 'Detail Penggunaan Alsintan | SI-KEP',
+        'page'  => 'Penggunaan Alsintan',
+        'penggunaan' => penggunaan_alsintan_model::with(['alsintan','anggota'])->findOrFail($id)
+    ];
+
+    return view('pages.Admin.penggunaan_alsintan.detail_penggunaan_alsintan', $data);
+}
+
+public function edit_penggunaan_alsintan($id)
+{
+    $data = [
+        'judul' => 'EDIT PENGGUNAAN ALSINTAN',
+        'title' => 'Edit Penggunaan Alsintan | SI-KEP',
+        'page'  => 'Penggunaan Alsintan',
+        'penggunaan' => penggunaan_alsintan_model::findOrFail($id),
+        'alsintan' => alsintan_model::all(),
+        'anggota' => anggota_model::all()
+    ];
+
+    return view('pages.Admin.penggunaan_alsintan.edit_penggunaan_alsintan', $data);
+}
+
+public function update_penggunaan_alsintan(Request $request, $id)
+{
+    $penggunaan = penggunaan_alsintan_model::findOrFail($id);
+    $penggunaan->update($request->all());
+
+    return redirect()->route('admin.penggunaan_alsintan')
+        ->with('success','Data penggunaan berhasil diperbarui');
+}
+
+public function hapus_penggunaan_alsintan($id)
+{
+    penggunaan_alsintan_model::findOrFail($id)->delete();
+
+    return redirect()->route('admin.penggunaan_alsintan')
+        ->with('success','Data penggunaan berhasil dihapus');
 }
 
 }

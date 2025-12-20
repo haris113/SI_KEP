@@ -18,27 +18,46 @@
         </a>
     </li>
 
-
-    <!-- Nav Item - Divisi UPJA -->
-    <li class="nav-item {{ in_array($page, ['Data Alsintan', 'Perawatan Alsintan', 'Penggunaan Alsintan', 'Laporan UPJA', 'Operator']) ? 'active' : '' }}">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUpja"
-            aria-expanded="{{ in_array($page, ['Data Alsintan', 'Perawatan Alsintan', 'Penggunaan Alsintan', 'Laporan UPJA', 'Operator']) ? 'true' : 'false' }}"
-            aria-controls="collapseUpja">
+    <!-- Nav Item - Alsintan -->
+    <li class="nav-item {{ $page === 'alsintan' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('Divisi_Upja/alsintan') }}">
             <i class="fa-solid fa-tractor fa-fw"></i>
-            <span>Divisi UPJA</span>
+            <span>Data Alsintan</span>
         </a>
-        <div id="collapseUpja" class="collapse {{ in_array($page, ['Data Alsintan', 'Perawatan Alsintan', 'Penggunaan Alsintan', 'Laporan UPJA', 'Operator']) ? 'show' : '' }}" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item {{ $page === 'Data Alsintan' ? 'active' : '' }}" href="{{ url('admin/alsintan') }}">Data Alsintan</a>
-                <a class="collapse-item {{ $page === 'Operator' ? 'active' : '' }}" href="{{ url('admin/operator') }}">Operator</a>
-                <a class="collapse-item {{ $page === 'Perawatan Alsintan' ? 'active' : '' }}" href="{{ url('admin/perawatan_alsintan') }}">Perawatan Alsintan</a>
-                <a class="collapse-item {{ $page === 'Penggunaan Alsintan' ? 'active' : '' }}" href="{{ url('admin/penggunaan_alsintan') }}">Penggunaan Alsintan</a>
-                <a class="collapse-item {{ $page === 'Penyusutan' ? 'active' : '' }}" href="{{ url('admin/penyusutan') }}">Penyusutan Alsintan</a>
-                <a class="collapse-item {{ $page === 'Laporan UPJA' ? 'active' : '' }}" href="{{ url('admin/laporan_upja') }}">Laporan UPJA</a>
-                
-            </div>
-        </div>
     </li>
+
+    <!-- Nav Item - Perawatan Alsintan -->
+    <li class="nav-item {{ $page === 'perawatan' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('Divisi_Upja/perawatan') }}">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Perawatan Alsintan</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Penggunaan Alsintan -->
+    <li class="nav-item {{ $page === 'penggunaan_alsintan' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('Divisi_Upja/penggunaan_alsintan') }}">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Penggunaan Alsintan</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Penyusutan -->
+    <li class="nav-item {{ $page === 'penyusutan' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('Divisi_Upja/penyusutan') }}">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Penyusutan Alsintan</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Laporan UPJA -->
+    <li class="nav-item {{ $page === 'laporan_upja' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('Divisi_Upja/laporan_upja') }}">
+            <i class="fa-solid fa-file fa-fw"></i>
+            <span>Laporan UPJA</span>
+        </a>
+    </li>
+   
 
     <!-- Sidebar Toggler -->
     <div class="text-center d-none d-md-inline">

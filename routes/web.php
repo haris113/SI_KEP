@@ -143,13 +143,22 @@ Route::middleware(['verifikasi_role:admin'])->group(function () {
 
      Route::get('/admin/laporan_upja', [admin_controller::class, 'laporan_upja'])->name('admin.laporan_upja');
      Route::get('/admin/tambah_laporan_upja', [admin_controller::class, 'tambah_laporan_upja'])->name('admin.tambah_laporan_upja');
-     Route::post('/admin/laporan_upja', [admin_controller::class, 'laporan_upja'])->name('admin.laporan_upja');
+     Route::post('/admin/create_laporan_upja', [admin_controller::class, 'create_laporan_upja'])->name('admin.create_laporan_upja');
      Route::get('/admin/detail_laporan_upja/{id}', [admin_controller::class, 'detail_laporan_upja'])->name('admin.detail_laporan_upja');
      Route::get('/admin/edit_laporan_upja/{id}', [admin_controller::class, 'edit_laporan_upja'])->name('admin.edit_laporan_upja');
      Route::put('/admin/update_laporan_upja/{id}', [admin_controller::class, 'update_laporan_upja'])->name('admin.update_laporan_upja');
      Route::get('/admin/hapus_laporan_upja/{id}', [admin_controller::class, 'hapus_laporan_upja'])->name('admin.hapus_laporan_upja');
 
 });
+
+// ================= PENGGUNAAN ALSINTAN =================
+Route::get('/admin/penggunaan_alsintan', [admin_controller::class, 'penggunaan_alsintan'])->name('admin.penggunaan_alsintan');
+Route::get('/admin/tambah_penggunaan_alsintan', [admin_controller::class, 'tambah_penggunaan_alsintan'])->name('admin.tambah_penggunaan_alsintan');
+Route::post('/admin/create_penggunaan_alsintan', [admin_controller::class, 'create_penggunaan_alsintan'])->name('admin.create_penggunaan_alsintan');
+Route::get('/admin/detail_penggunaan_alsintan/{id}', [admin_controller::class, 'detail_penggunaan_alsintan'])->name('admin.detail_penggunaan_alsintan');
+Route::get('/admin/edit_penggunaan_alsintan/{id}', [admin_controller::class, 'edit_penggunaan_alsintan'])->name('admin.edit_penggunaan_alsintan');
+Route::put('/admin/update_penggunaan_alsintan/{id}', [admin_controller::class, 'update_penggunaan_alsintan'])->name('admin.update_penggunaan_alsintan');
+Route::get('/admin/hapus_penggunaan_alsintan/{id}', [admin_controller::class, 'hapus_penggunaan_alsintan'])->name('admin.hapus_penggunaan_alsintan');
 
 // ---------------------------------------   ROLE KETUA --------------------------------------------------------
 
